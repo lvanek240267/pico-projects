@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.12)
 
+include(../pico_sdk_import.cmake)
+
+
 # Pull in SDK (must be before project)
 include(pico_sdk_import.cmake)
 
@@ -22,6 +25,7 @@ include(example_auto_set_url.cmake)
 # Add blink example
 add_subdirectory(my_blink)
 add_subdirectory(neopixel)
+add_subdirectory(st7735_tft)
 
 add_compile_options(-Wall
         -Wno-format          # int != int32_t as far as the compiler is concerned because gcc has int32_t as long int
