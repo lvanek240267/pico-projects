@@ -18,7 +18,7 @@ App|Description
 [neopixel](neopixel) | Playing with NeoPixel circle
 
 
-### NeoPixels sample
+### ST7753 TFT Display
 
 App|Description 
 ---|---
