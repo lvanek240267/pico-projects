@@ -22,4 +22,4 @@ App|Description
 
 App|Description 
 ---|---
-[st7735_tft](neopist7735_tftxel) | Testing ST7735_TFT_PICO library by Gavin Lyons
+[st7735_tft](st7735_tft) | Testing ST7735_TFT_PICO library by Gavin Lyons
