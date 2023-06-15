@@ -9,9 +9,10 @@
 					"childIndexes" : 
 					[
 						1,
-						80,
-						81,
-						83
+						2,
+						99,
+						100,
+						102
 					],
 					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
@@ -22,12 +23,24 @@
 					"source" : "."
 				},
 				{
+					"build" : "pico_extras",
+					"jsonFile" : "directory-pico_extras-Debug-9b9ab3404773c61206c4.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "C:/Users/lvanek/Documents/Pico-v1.5.0/pico-extras"
+				},
+				{
 					"build" : "pico-sdk",
 					"childIndexes" : 
 					[
-						2,
 						3,
-						79
+						4,
+						80,
+						98
 					],
 					"jsonFile" : "directory-pico-sdk-Debug-b6a798b4e4fe441d590e.json",
 					"minimumCMakeVersion" : 
@@ -35,7 +48,7 @@
 						"string" : "3.13"
 					},
 					"parentIndex" : 0,
-					"projectIndex" : 1,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk"
 				},
 				{
@@ -45,32 +58,31 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 1,
-					"projectIndex" : 1,
+					"parentIndex" : 2,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/tools"
 				},
 				{
 					"build" : "pico-sdk/src",
 					"childIndexes" : 
 					[
-						4,
-						16,
-						76
+						5,
+						17,
+						77
 					],
 					"jsonFile" : "directory-pico-sdk.src-Debug-24c563ef22319c4e9fd1.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 1,
-					"projectIndex" : 1,
+					"parentIndex" : 2,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src"
 				},
 				{
 					"build" : "pico-sdk/src/common",
 					"childIndexes" : 
 					[
-						5,
 						6,
 						7,
 						8,
@@ -80,15 +92,16 @@
 						12,
 						13,
 						14,
-						15
+						15,
+						16
 					],
 					"jsonFile" : "directory-pico-sdk.src.common-Debug-e40457c4811b05ecc844.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 3,
-					"projectIndex" : 1,
+					"parentIndex" : 4,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/common"
 				},
 				{
@@ -98,8 +111,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 4,
-					"projectIndex" : 1,
+					"parentIndex" : 5,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/common/boot_picoboot"
 				},
 				{
@@ -109,8 +122,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 4,
-					"projectIndex" : 1,
+					"parentIndex" : 5,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/common/boot_uf2"
 				},
 				{
@@ -120,8 +133,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 4,
-					"projectIndex" : 1,
+					"parentIndex" : 5,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/common/pico_base"
 				},
 				{
@@ -131,8 +144,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 4,
-					"projectIndex" : 1,
+					"parentIndex" : 5,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/common/pico_usb_reset_interface"
 				},
 				{
@@ -142,8 +155,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 4,
-					"projectIndex" : 1,
+					"parentIndex" : 5,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/common/pico_bit_ops"
 				},
 				{
@@ -153,8 +166,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 4,
-					"projectIndex" : 1,
+					"parentIndex" : 5,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/common/pico_binary_info"
 				},
 				{
@@ -164,8 +177,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 4,
-					"projectIndex" : 1,
+					"parentIndex" : 5,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/common/pico_divider"
 				},
 				{
@@ -175,8 +188,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 4,
-					"projectIndex" : 1,
+					"parentIndex" : 5,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/common/pico_sync"
 				},
 				{
@@ -186,8 +199,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 4,
-					"projectIndex" : 1,
+					"parentIndex" : 5,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/common/pico_time"
 				},
 				{
@@ -197,8 +210,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 4,
-					"projectIndex" : 1,
+					"parentIndex" : 5,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/common/pico_util"
 				},
 				{
@@ -208,15 +221,14 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 4,
-					"projectIndex" : 1,
+					"parentIndex" : 5,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/common/pico_stdlib"
 				},
 				{
 					"build" : "pico-sdk/src/rp2_common",
 					"childIndexes" : 
 					[
-						17,
 						18,
 						19,
 						20,
@@ -265,22 +277,23 @@
 						63,
 						64,
 						65,
-						67,
+						66,
 						68,
 						69,
 						70,
 						71,
 						72,
 						73,
-						75
+						74,
+						76
 					],
 					"jsonFile" : "directory-pico-sdk.src.rp2_common-Debug-7313cbf453dd59c1d725.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 3,
-					"projectIndex" : 1,
+					"parentIndex" : 4,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common"
 				},
 				{
@@ -290,8 +303,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/hardware_base"
 				},
 				{
@@ -301,8 +314,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/hardware_claim"
 				},
 				{
@@ -312,8 +325,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/hardware_adc"
 				},
 				{
@@ -323,8 +336,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/hardware_clocks"
 				},
 				{
@@ -334,8 +347,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/hardware_dma"
 				},
 				{
@@ -345,8 +358,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/hardware_divider"
 				},
 				{
@@ -356,8 +369,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/hardware_exception"
 				},
 				{
@@ -367,8 +380,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/hardware_flash"
 				},
 				{
@@ -378,8 +391,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/hardware_gpio"
 				},
 				{
@@ -389,8 +402,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/hardware_i2c"
 				},
 				{
@@ -400,8 +413,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/hardware_interp"
 				},
 				{
@@ -411,8 +424,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/hardware_irq"
 				},
 				{
@@ -422,8 +435,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/hardware_pio"
 				},
 				{
@@ -433,8 +446,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/hardware_pll"
 				},
 				{
@@ -444,8 +457,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/hardware_pwm"
 				},
 				{
@@ -455,8 +468,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/hardware_resets"
 				},
 				{
@@ -466,8 +479,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/hardware_rtc"
 				},
 				{
@@ -477,8 +490,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/hardware_spi"
 				},
 				{
@@ -488,8 +501,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/hardware_sync"
 				},
 				{
@@ -499,8 +512,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/hardware_timer"
 				},
 				{
@@ -510,8 +523,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/hardware_uart"
 				},
 				{
@@ -521,8 +534,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/hardware_vreg"
 				},
 				{
@@ -532,8 +545,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/hardware_watchdog"
 				},
 				{
@@ -543,8 +556,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/hardware_xosc"
 				},
 				{
@@ -554,8 +567,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/pico_bootrom"
 				},
 				{
@@ -565,8 +578,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/pico_platform"
 				},
 				{
@@ -576,8 +589,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/boot_stage2",
 					"targetIndexes" : 
 					[
@@ -593,8 +606,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/pico_bootsel_via_double_reset"
 				},
 				{
@@ -604,8 +617,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/pico_multicore"
 				},
 				{
@@ -615,8 +628,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/pico_unique_id"
 				},
 				{
@@ -626,8 +639,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/pico_bit_ops"
 				},
 				{
@@ -637,8 +650,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/pico_divider"
 				},
 				{
@@ -648,8 +661,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/pico_double"
 				},
 				{
@@ -659,8 +672,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/pico_int64_ops"
 				},
 				{
@@ -670,8 +683,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/pico_float"
 				},
 				{
@@ -681,8 +694,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/pico_mem_ops"
 				},
 				{
@@ -692,8 +705,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/pico_malloc"
 				},
 				{
@@ -703,8 +716,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/pico_printf"
 				},
 				{
@@ -714,8 +727,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/pico_rand"
 				},
 				{
@@ -725,8 +738,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/pico_stdio"
 				},
 				{
@@ -736,8 +749,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/pico_stdio_semihosting"
 				},
 				{
@@ -747,8 +760,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/pico_stdio_uart"
 				},
 				{
@@ -758,8 +771,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/cmsis"
 				},
 				{
@@ -769,13 +782,13 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/tinyusb",
 					"targetIndexes" : 
 					[
-						8,
-						9
+						14,
+						15
 					]
 				},
 				{
@@ -785,8 +798,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/pico_stdio_usb"
 				},
 				{
@@ -796,8 +809,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/pico_i2c_slave"
 				},
 				{
@@ -807,8 +820,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/pico_async_context"
 				},
 				{
@@ -818,23 +831,23 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/pico_btstack"
 				},
 				{
 					"build" : "pico-sdk/src/rp2_common/pico_cyw43_driver",
 					"childIndexes" : 
 					[
-						66
+						67
 					],
 					"jsonFile" : "directory-pico-sdk.src.rp2_common.pico_cyw43_driver-Debug-76995e2918965638487a.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/pico_cyw43_driver",
 					"targetIndexes" : 
 					[
@@ -848,8 +861,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 65,
-					"projectIndex" : 1,
+					"parentIndex" : 66,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus"
 				},
 				{
@@ -859,8 +872,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/pico_lwip"
 				},
 				{
@@ -870,8 +883,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/pico_cyw43_arch"
 				},
 				{
@@ -881,8 +894,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/pico_mbedtls"
 				},
 				{
@@ -892,8 +905,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/pico_stdlib"
 				},
 				{
@@ -903,8 +916,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/pico_cxx_options"
 				},
 				{
@@ -914,23 +927,23 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/pico_standard_link"
 				},
 				{
 					"build" : "pico-sdk/src/rp2_common/pico_fix",
 					"childIndexes" : 
 					[
-						74
+						75
 					],
 					"jsonFile" : "directory-pico-sdk.src.rp2_common.pico_fix-Debug-d77a3892f1dbfe642403.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/pico_fix"
 				},
 				{
@@ -940,8 +953,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 73,
-					"projectIndex" : 1,
+					"parentIndex" : 74,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration"
 				},
 				{
@@ -951,24 +964,24 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 16,
-					"projectIndex" : 1,
+					"parentIndex" : 17,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2_common/pico_runtime"
 				},
 				{
 					"build" : "pico-sdk/src/rp2040",
 					"childIndexes" : 
 					[
-						77,
-						78
+						78,
+						79
 					],
 					"jsonFile" : "directory-pico-sdk.src.rp2040-Debug-6a648a63ad03518588f9.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 3,
-					"projectIndex" : 1,
+					"parentIndex" : 4,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2040"
 				},
 				{
@@ -978,8 +991,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 76,
-					"projectIndex" : 1,
+					"parentIndex" : 77,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2040/hardware_regs"
 				},
 				{
@@ -989,9 +1002,257 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 76,
-					"projectIndex" : 1,
+					"parentIndex" : 77,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/src/rp2040/hardware_structs"
+				},
+				{
+					"build" : "pico_extras/src",
+					"childIndexes" : 
+					[
+						81,
+						87
+					],
+					"jsonFile" : "directory-pico_extras.src-Debug-cda08e6a9bae333f11fb.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 2,
+					"source" : "C:/Users/lvanek/Documents/Pico-v1.5.0/pico-extras/src"
+				},
+				{
+					"build" : "pico_extras/src/common",
+					"childIndexes" : 
+					[
+						82,
+						83,
+						84,
+						85,
+						86
+					],
+					"jsonFile" : "directory-pico_extras.src.common-Debug-b43347ec926c6cbac2d8.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 80,
+					"projectIndex" : 2,
+					"source" : "C:/Users/lvanek/Documents/Pico-v1.5.0/pico-extras/src/common"
+				},
+				{
+					"build" : "pico_extras/src/common/pico_audio",
+					"jsonFile" : "directory-pico_extras.src.common.pico_audio-Debug-3261a5f9f292371b6bbd.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 81,
+					"projectIndex" : 2,
+					"source" : "C:/Users/lvanek/Documents/Pico-v1.5.0/pico-extras/src/common/pico_audio"
+				},
+				{
+					"build" : "pico_extras/src/common/pico_scanvideo",
+					"jsonFile" : "directory-pico_extras.src.common.pico_scanvideo-Debug-0a03d6de8b4b362e8061.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 81,
+					"projectIndex" : 2,
+					"source" : "C:/Users/lvanek/Documents/Pico-v1.5.0/pico-extras/src/common/pico_scanvideo",
+					"targetIndexes" : 
+					[
+						11
+					]
+				},
+				{
+					"build" : "pico_extras/src/common/pico_sd_card",
+					"jsonFile" : "directory-pico_extras.src.common.pico_sd_card-Debug-f9546ad34d841a736274.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 81,
+					"projectIndex" : 2,
+					"source" : "C:/Users/lvanek/Documents/Pico-v1.5.0/pico-extras/src/common/pico_sd_card"
+				},
+				{
+					"build" : "pico_extras/src/common/pico_util_buffer",
+					"jsonFile" : "directory-pico_extras.src.common.pico_util_buffer-Debug-1dc66f16f9ef1a8e9b7c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 81,
+					"projectIndex" : 2,
+					"source" : "C:/Users/lvanek/Documents/Pico-v1.5.0/pico-extras/src/common/pico_util_buffer"
+				},
+				{
+					"build" : "pico_extras/src/common/platypus",
+					"jsonFile" : "directory-pico_extras.src.common.platypus-Debug-6a3c2316defa28823ab0.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 81,
+					"projectIndex" : 2,
+					"source" : "C:/Users/lvanek/Documents/Pico-v1.5.0/pico-extras/src/common/platypus"
+				},
+				{
+					"build" : "pico_extras/src/rp2_common",
+					"childIndexes" : 
+					[
+						88,
+						89,
+						90,
+						91,
+						92,
+						93,
+						94,
+						95,
+						96,
+						97
+					],
+					"jsonFile" : "directory-pico_extras.src.rp2_common-Debug-632647254fb3fd8f1c12.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 80,
+					"projectIndex" : 2,
+					"source" : "C:/Users/lvanek/Documents/Pico-v1.5.0/pico-extras/src/rp2_common"
+				},
+				{
+					"build" : "pico_extras/src/rp2_common/hardware_rosc",
+					"jsonFile" : "directory-pico_extras.src.rp2_common.hardware_rosc-Debug-fc64e883272329951e54.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 87,
+					"projectIndex" : 2,
+					"source" : "C:/Users/lvanek/Documents/Pico-v1.5.0/pico-extras/src/rp2_common/hardware_rosc"
+				},
+				{
+					"build" : "pico_extras/src/rp2_common/pico_sleep",
+					"jsonFile" : "directory-pico_extras.src.rp2_common.pico_sleep-Debug-e80b16b12d0e7c871c35.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 87,
+					"projectIndex" : 2,
+					"source" : "C:/Users/lvanek/Documents/Pico-v1.5.0/pico-extras/src/rp2_common/pico_sleep"
+				},
+				{
+					"build" : "pico_extras/src/rp2_common/pico_audio_i2s",
+					"jsonFile" : "directory-pico_extras.src.rp2_common.pico_audio_i2s-Debug-16a235ca050a95d6fb9f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 87,
+					"projectIndex" : 2,
+					"source" : "C:/Users/lvanek/Documents/Pico-v1.5.0/pico-extras/src/rp2_common/pico_audio_i2s",
+					"targetIndexes" : 
+					[
+						7
+					]
+				},
+				{
+					"build" : "pico_extras/src/rp2_common/pico_audio_pwm",
+					"jsonFile" : "directory-pico_extras.src.rp2_common.pico_audio_pwm-Debug-f0e381bfe637f4f58624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 87,
+					"projectIndex" : 2,
+					"source" : "C:/Users/lvanek/Documents/Pico-v1.5.0/pico-extras/src/rp2_common/pico_audio_pwm",
+					"targetIndexes" : 
+					[
+						8
+					]
+				},
+				{
+					"build" : "pico_extras/src/rp2_common/pico_audio_spdif",
+					"jsonFile" : "directory-pico_extras.src.rp2_common.pico_audio_spdif-Debug-d34f843610cbac6e3556.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 87,
+					"projectIndex" : 2,
+					"source" : "C:/Users/lvanek/Documents/Pico-v1.5.0/pico-extras/src/rp2_common/pico_audio_spdif",
+					"targetIndexes" : 
+					[
+						9
+					]
+				},
+				{
+					"build" : "pico_extras/src/rp2_common/pico_sd_card",
+					"jsonFile" : "directory-pico_extras.src.rp2_common.pico_sd_card-Debug-b79de03cb22da80deaac.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 87,
+					"projectIndex" : 2,
+					"source" : "C:/Users/lvanek/Documents/Pico-v1.5.0/pico-extras/src/rp2_common/pico_sd_card",
+					"targetIndexes" : 
+					[
+						12
+					]
+				},
+				{
+					"build" : "pico_extras/src/rp2_common/pico_scanvideo_dpi",
+					"jsonFile" : "directory-pico_extras.src.rp2_common.pico_scanvideo_dpi-Debug-173d1c96119bada428ea.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 87,
+					"projectIndex" : 2,
+					"source" : "C:/Users/lvanek/Documents/Pico-v1.5.0/pico-extras/src/rp2_common/pico_scanvideo_dpi",
+					"targetIndexes" : 
+					[
+						10
+					]
+				},
+				{
+					"build" : "pico_extras/src/rp2_common/usb_common",
+					"jsonFile" : "directory-pico_extras.src.rp2_common.usb_common-Debug-351d5db7d47e43fe79e2.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 87,
+					"projectIndex" : 2,
+					"source" : "C:/Users/lvanek/Documents/Pico-v1.5.0/pico-extras/src/rp2_common/usb_common"
+				},
+				{
+					"build" : "pico_extras/src/rp2_common/usb_device",
+					"jsonFile" : "directory-pico_extras.src.rp2_common.usb_device-Debug-fd1114ac7a2736f893df.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 87,
+					"projectIndex" : 2,
+					"source" : "C:/Users/lvanek/Documents/Pico-v1.5.0/pico-extras/src/rp2_common/usb_device"
+				},
+				{
+					"build" : "pico_extras/src/rp2_common/usb_device_msc",
+					"jsonFile" : "directory-pico_extras.src.rp2_common.usb_device_msc-Debug-7da9eb04f25fc05eea30.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 87,
+					"projectIndex" : 2,
+					"source" : "C:/Users/lvanek/Documents/Pico-v1.5.0/pico-extras/src/rp2_common/usb_device_msc"
 				},
 				{
 					"build" : "pico-sdk/docs",
@@ -1000,8 +1261,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 1,
-					"projectIndex" : 1,
+					"parentIndex" : 2,
+					"projectIndex" : 2,
 					"source" : "C:/PicoSDK/pico-sdk/docs"
 				},
 				{
@@ -1023,7 +1284,7 @@
 					"build" : "neopixel",
 					"childIndexes" : 
 					[
-						82
+						101
 					],
 					"jsonFile" : "directory-neopixel-Debug-5bd3fb6867ff4fbad5c8.json",
 					"minimumCMakeVersion" : 
@@ -1031,7 +1292,7 @@
 						"string" : "3.13"
 					},
 					"parentIndex" : 0,
-					"projectIndex" : 2,
+					"projectIndex" : 3,
 					"source" : "neopixel",
 					"targetIndexes" : 
 					[
@@ -1046,15 +1307,15 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 81,
-					"projectIndex" : 2,
+					"parentIndex" : 100,
+					"projectIndex" : 3,
 					"source" : "C:/PicoSDK/pico-sdk"
 				},
 				{
 					"build" : "st7735_tft",
 					"childIndexes" : 
 					[
-						84
+						103
 					],
 					"jsonFile" : "directory-st7735_tft-Debug-430c94641e9a02604339.json",
 					"minimumCMakeVersion" : 
@@ -1062,11 +1323,11 @@
 						"string" : "3.12"
 					},
 					"parentIndex" : 0,
-					"projectIndex" : 3,
+					"projectIndex" : 4,
 					"source" : "st7735_tft",
 					"targetIndexes" : 
 					[
-						7
+						13
 					]
 				},
 				{
@@ -1076,8 +1337,8 @@
 					{
 						"string" : "3.13"
 					},
-					"parentIndex" : 83,
-					"projectIndex" : 3,
+					"parentIndex" : 102,
+					"projectIndex" : 4,
 					"source" : "C:/PicoSDK/pico-sdk"
 				}
 			],
@@ -1089,12 +1350,13 @@
 					[
 						1,
 						2,
-						3
+						3,
+						4
 					],
 					"directoryIndexes" : 
 					[
 						0,
-						80
+						99
 					],
 					"name" : "pico_projects",
 					"targetIndexes" : 
@@ -1105,7 +1367,14 @@
 				{
 					"directoryIndexes" : 
 					[
-						1,
+						1
+					],
+					"name" : "pico_extras",
+					"parentIndex" : 0
+				},
+				{
+					"directoryIndexes" : 
+					[
 						2,
 						3,
 						4,
@@ -1183,7 +1452,26 @@
 						76,
 						77,
 						78,
-						79
+						79,
+						80,
+						81,
+						82,
+						83,
+						84,
+						85,
+						86,
+						87,
+						88,
+						89,
+						90,
+						91,
+						92,
+						93,
+						94,
+						95,
+						96,
+						97,
+						98
 					],
 					"name" : "pico_sdk",
 					"parentIndex" : 0,
@@ -1193,15 +1481,21 @@
 						3,
 						4,
 						5,
+						7,
 						8,
-						9
+						9,
+						10,
+						11,
+						12,
+						14,
+						15
 					]
 				},
 				{
 					"directoryIndexes" : 
 					[
-						81,
-						82
+						100,
+						101
 					],
 					"name" : "WS2812_Example",
 					"parentIndex" : 0,
@@ -1214,88 +1508,130 @@
 				{
 					"directoryIndexes" : 
 					[
-						83,
-						84
+						102,
+						103
 					],
 					"name" : "st7735_tft",
 					"parentIndex" : 0,
 					"targetIndexes" : 
 					[
-						7
+						13
 					]
 				}
 			],
 			"targets" : 
 			[
 				{
-					"directoryIndex" : 81,
+					"directoryIndex" : 100,
 					"id" : "WS2812_Example::@3b4726f62ef4e112453a",
-					"jsonFile" : "target-WS2812_Example-Debug-8de55f0727763ee551c5.json",
+					"jsonFile" : "target-WS2812_Example-Debug-91bf773f0f2ad884edbd.json",
 					"name" : "WS2812_Example",
-					"projectIndex" : 2
+					"projectIndex" : 3
 				},
 				{
-					"directoryIndex" : 81,
+					"directoryIndex" : 100,
 					"id" : "WS2812_Example_WS2812_pio_h::@3b4726f62ef4e112453a",
 					"jsonFile" : "target-WS2812_Example_WS2812_pio_h-Debug-ea52849fb584b6361410.json",
 					"name" : "WS2812_Example_WS2812_pio_h",
-					"projectIndex" : 2
+					"projectIndex" : 3
 				},
 				{
-					"directoryIndex" : 43,
+					"directoryIndex" : 44,
 					"id" : "bs2_default::@bc554eaed616d198a22d",
 					"jsonFile" : "target-bs2_default-Debug-3bf44b3d8a47a5b2b283.json",
 					"name" : "bs2_default",
-					"projectIndex" : 1
+					"projectIndex" : 2
 				},
 				{
-					"directoryIndex" : 43,
+					"directoryIndex" : 44,
 					"id" : "bs2_default_bin::@bc554eaed616d198a22d",
 					"jsonFile" : "target-bs2_default_bin-Debug-228cfba4da6ed8701f1e.json",
 					"name" : "bs2_default_bin",
-					"projectIndex" : 1
+					"projectIndex" : 2
 				},
 				{
-					"directoryIndex" : 43,
+					"directoryIndex" : 44,
 					"id" : "bs2_default_padded_checksummed_asm::@bc554eaed616d198a22d",
 					"jsonFile" : "target-bs2_default_padded_checksummed_asm-Debug-58c4f4709f68c541a3f4.json",
 					"name" : "bs2_default_padded_checksummed_asm",
-					"projectIndex" : 1
+					"projectIndex" : 2
 				},
 				{
-					"directoryIndex" : 65,
+					"directoryIndex" : 66,
 					"id" : "cyw43_driver_picow_cyw43_bus_pio_spi_pio_h::@c2fb4f534018e64680d5",
 					"jsonFile" : "target-cyw43_driver_picow_cyw43_bus_pio_spi_pio_h-Debug-a163d96053d008fdca5c.json",
 					"name" : "cyw43_driver_picow_cyw43_bus_pio_spi_pio_h",
-					"projectIndex" : 1
+					"projectIndex" : 2
 				},
 				{
-					"directoryIndex" : 80,
+					"directoryIndex" : 99,
 					"id" : "my_blink::@f2fe607f63f0be7df34d",
-					"jsonFile" : "target-my_blink-Debug-d18613baad8b5fb3df28.json",
+					"jsonFile" : "target-my_blink-Debug-cec7ac4bd8277b34f197.json",
 					"name" : "my_blink",
 					"projectIndex" : 0
 				},
 				{
-					"directoryIndex" : 83,
-					"id" : "st7735_tft::@bc2fddf756cb71547ba9",
-					"jsonFile" : "target-st7735_tft-Debug-148c4f78e4bcb824f0c4.json",
-					"name" : "st7735_tft",
-					"projectIndex" : 3
+					"directoryIndex" : 90,
+					"id" : "pico_audio_i2s_audio_i2s_pio_h::@54354557063177904464",
+					"jsonFile" : "target-pico_audio_i2s_audio_i2s_pio_h-Debug-b237c9e3cafdfd427aa2.json",
+					"name" : "pico_audio_i2s_audio_i2s_pio_h",
+					"projectIndex" : 2
 				},
 				{
-					"directoryIndex" : 60,
+					"directoryIndex" : 91,
+					"id" : "pico_audio_pwm_audio_pwm_pio_h::@5abc8f3433dbdc29da19",
+					"jsonFile" : "target-pico_audio_pwm_audio_pwm_pio_h-Debug-33efd187a922c60a78a0.json",
+					"name" : "pico_audio_pwm_audio_pwm_pio_h",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 92,
+					"id" : "pico_audio_spdif_audio_spdif_pio_h::@e375f3a3d97eece01a66",
+					"jsonFile" : "target-pico_audio_spdif_audio_spdif_pio_h-Debug-7320f01e67745ca36596.json",
+					"name" : "pico_audio_spdif_audio_spdif_pio_h",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 94,
+					"id" : "pico_scanvideo_dpi_timing_pio_h::@0f7e458cd46d5b281b17",
+					"jsonFile" : "target-pico_scanvideo_dpi_timing_pio_h-Debug-2087e409501b2477dab1.json",
+					"name" : "pico_scanvideo_dpi_timing_pio_h",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 83,
+					"id" : "pico_scanvideo_scanvideo_pio_h::@e43d9710235466bb041c",
+					"jsonFile" : "target-pico_scanvideo_scanvideo_pio_h-Debug-6cb6ac04f1eeda90f4aa.json",
+					"name" : "pico_scanvideo_scanvideo_pio_h",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 93,
+					"id" : "pico_sd_card_sd_card_pio_h::@0b1f3129c9fb6ae3f142",
+					"jsonFile" : "target-pico_sd_card_sd_card_pio_h-Debug-159e01d651f04f516a41.json",
+					"name" : "pico_sd_card_sd_card_pio_h",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 102,
+					"id" : "st7735_tft::@bc2fddf756cb71547ba9",
+					"jsonFile" : "target-st7735_tft-Debug-a6e02b2a67574ca8b7c4.json",
+					"name" : "st7735_tft",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 61,
 					"id" : "tinyusb_pico_pio_usb_usb_rx_pio_h::@36e52159cb4e937c58c5",
 					"jsonFile" : "target-tinyusb_pico_pio_usb_usb_rx_pio_h-Debug-531794808ec9cd5be4ad.json",
 					"name" : "tinyusb_pico_pio_usb_usb_rx_pio_h",
-					"projectIndex" : 1
+					"projectIndex" : 2
 				},
 				{
-					"directoryIndex" : 60,
+					"directoryIndex" : 61,
 					"id" : "tinyusb_pico_pio_usb_usb_tx_pio_h::@36e52159cb4e937c58c5",
 					"jsonFile" : "target-tinyusb_pico_pio_usb_usb_tx_pio_h-Debug-1a0bd0f3d15148bd8b7f.json",
 					"name" : "tinyusb_pico_pio_usb_usb_tx_pio_h",
-					"projectIndex" : 1
+					"projectIndex" : 2
 				}
 			]
 		}
