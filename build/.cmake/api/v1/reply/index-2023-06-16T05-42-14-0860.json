@@ -1,0 +1,140 @@
+{
+	"cmake" : 
+	{
+		"generator" : 
+		{
+			"multiConfig" : false,
+			"name" : "Ninja"
+		},
+		"paths" : 
+		{
+			"cmake" : "C:/PicoSDK/cmake/bin/cmake.exe",
+			"cpack" : "C:/PicoSDK/cmake/bin/cpack.exe",
+			"ctest" : "C:/PicoSDK/cmake/bin/ctest.exe",
+			"root" : "C:/PicoSDK/cmake/share/cmake-3.25"
+		},
+		"version" : 
+		{
+			"isDirty" : false,
+			"major" : 3,
+			"minor" : 25,
+			"patch" : 2,
+			"string" : "3.25.2",
+			"suffix" : ""
+		}
+	},
+	"objects" : 
+	[
+		{
+			"jsonFile" : "codemodel-v2-fcb68e8fa713e8ef019f.json",
+			"kind" : "codemodel",
+			"version" : 
+			{
+				"major" : 2,
+				"minor" : 4
+			}
+		},
+		{
+<<<<<<<< HEAD:build/.cmake/api/v1/reply/index-2023-06-16T05-42-14-0860.json
+			"jsonFile" : "cache-v2-445872ab5336e0b71111.json",
+========
+			"jsonFile" : "cache-v2-e0ed8f2a0c6063c85253.json",
+>>>>>>>> 7b42e3b15b24eb0b2d19732994dd78debdd5cf60:build/.cmake/api/v1/reply/index-2023-06-15T13-54-33-0412.json
+			"kind" : "cache",
+			"version" : 
+			{
+				"major" : 2,
+				"minor" : 0
+			}
+		},
+		{
+			"jsonFile" : "cmakeFiles-v1-99818b8892200a2584f6.json",
+			"kind" : "cmakeFiles",
+			"version" : 
+			{
+				"major" : 1,
+				"minor" : 0
+			}
+		},
+		{
+			"jsonFile" : "toolchains-v1-9c06ec62aef23676ead4.json",
+			"kind" : "toolchains",
+			"version" : 
+			{
+				"major" : 1,
+				"minor" : 0
+			}
+		}
+	],
+	"reply" : 
+	{
+		"client-vscode" : 
+		{
+			"query.json" : 
+			{
+				"requests" : 
+				[
+					{
+						"kind" : "cache",
+						"version" : 2
+					},
+					{
+						"kind" : "codemodel",
+						"version" : 2
+					},
+					{
+						"kind" : "toolchains",
+						"version" : 1
+					},
+					{
+						"kind" : "cmakeFiles",
+						"version" : 1
+					}
+				],
+				"responses" : 
+				[
+					{
+<<<<<<<< HEAD:build/.cmake/api/v1/reply/index-2023-06-16T05-42-14-0860.json
+						"jsonFile" : "cache-v2-445872ab5336e0b71111.json",
+========
+						"jsonFile" : "cache-v2-e0ed8f2a0c6063c85253.json",
+>>>>>>>> 7b42e3b15b24eb0b2d19732994dd78debdd5cf60:build/.cmake/api/v1/reply/index-2023-06-15T13-54-33-0412.json
+						"kind" : "cache",
+						"version" : 
+						{
+							"major" : 2,
+							"minor" : 0
+						}
+					},
+					{
+						"jsonFile" : "codemodel-v2-fcb68e8fa713e8ef019f.json",
+						"kind" : "codemodel",
+						"version" : 
+						{
+							"major" : 2,
+							"minor" : 4
+						}
+					},
+					{
+						"jsonFile" : "toolchains-v1-9c06ec62aef23676ead4.json",
+						"kind" : "toolchains",
+						"version" : 
+						{
+							"major" : 1,
+							"minor" : 0
+						}
+					},
+					{
+						"jsonFile" : "cmakeFiles-v1-99818b8892200a2584f6.json",
+						"kind" : "cmakeFiles",
+						"version" : 
+						{
+							"major" : 1,
+							"minor" : 0
+						}
+					}
+				]
+			}
+		}
+	}
+}

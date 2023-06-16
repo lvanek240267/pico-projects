@@ -1,8 +1,8 @@
-# Install script for directory: D:/Home/Development/Personal/PICO/pico-extras/src/common/pico_scanvideo
+# Install script for directory: C:/Users/lvanek/Documents/Pico-v1.5.0/pico-extras/src/common/pico_scanvideo
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/pico_extras")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/pico_projects")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
