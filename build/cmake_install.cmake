@@ -39,6 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
+  include("D:/Home/Development/Personal/PICO/pico-projects/build/pico_extras/cmake_install.cmake")
   include("D:/Home/Development/Personal/PICO/pico-projects/build/pico-sdk/cmake_install.cmake")
   include("D:/Home/Development/Personal/PICO/pico-projects/build/my_blink/cmake_install.cmake")
   include("D:/Home/Development/Personal/PICO/pico-projects/build/neopixel/cmake_install.cmake")
