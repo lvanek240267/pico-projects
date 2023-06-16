@@ -1,7 +1,0 @@
-= Testing ST7735_TFT_PICO library by Gavin Lyons
-
-== Description
-[[description]]
-
-Original repository: https://github.com/gavinlyonsrepo/ST7735_TFT_PICO
-
