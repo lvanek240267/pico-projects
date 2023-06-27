@@ -119,7 +119,7 @@ void Setup(void)
 // the chosen interface eg Spi0 CLK=18 DIN=19)
 	int8_t SDIN_TFT = 19; 
 	int8_t SCLK_TFT = 18; 
-	int8_t DC_TFT = 3;
+	int8_t DC_TFT = 3; // RS just means Register-Select. Some people call it DC for Data-Command. 
 	int8_t CS_TFT = 17; //2 ;  
 	int8_t RST_TFT = 15; //17;
 	myTFT.TFTSetupGPIO(RST_TFT, DC_TFT, CS_TFT, SCLK_TFT, SDIN_TFT);
