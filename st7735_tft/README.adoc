@@ -3,9 +3,12 @@
 == Description
 [[description]]
 
+This is here only for testing 1.8" 128x160 TFT display with controller ST7735, SPI.
+
 Original repository: https://github.com/gavinlyonsrepo/ST7735_TFT_PICO
 
-I have imported it to Visual Studio Code project.
+I have imported it to Visual Studio Code project. I changed PICO pin asignements and 
+also display resolution.
 
 == Wiring information
 [[ssd1306_i2c_wiring]]
