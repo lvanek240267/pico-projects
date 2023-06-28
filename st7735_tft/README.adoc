@@ -5,7 +5,7 @@
 
 Original repository: https://github.com/gavinlyonsrepo/ST7735_TFT_PICO
 
-I have imported to my Visual Studio code.
+I have imported it to Visual Studio Code project.
 
 == Wiring information
 [[ssd1306_i2c_wiring]]
