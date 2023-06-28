@@ -5,3 +5,16 @@
 
 Original repository: https://github.com/gavinlyonsrepo/ST7735_TFT_PICO
 
+I have imported to my Visual Studio code.
+
+== Wiring information
+[[ssd1306_i2c_wiring]]
+[pdfwidth=75%]
+.Wiring Diagram for Raspberry Pi Pico and ST7735 TFT display
+image::wiring.png[]
+
+* GP17 (SPI0 CSn) -> CS
+* GP15 -> RST
+* GP3 -> RS
+* GP19 (SPI0 TX) -> MOSI
+* GP18 (SPI0 SCK) -> CLK
