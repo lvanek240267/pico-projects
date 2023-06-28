@@ -42,7 +42,7 @@
 
 // Section :: Globals 
 ST7735_TFT myTFT;
-bool bTestFPS = false; /**< turn on frame rate per second test , set true for ON */
+bool bTestFPS = true; /**< turn on frame rate per second test , set true for ON */
 
 //  Section ::  Function Headers 
 
@@ -71,23 +71,28 @@ void EndTests(void);
 int main(void) 
 {
 	Setup();
-	Test1();
-	Test1A();
-	Test1B();
-	Test1C();
-	Test1D();
-	Test1E();
-	Test2();
-	Test3();
-	Test4();
-	Test5();
-	Test6();
-	Test7();
-	Test8();
-	Test9();
-	Test10();
-	Test11();
-	if (bTestFPS == true)  TestFPS();
+
+	for (int i = 0; i < 100; i++)
+	{
+		Test1();
+		Test1A();
+		Test1B();
+		Test1C();
+		Test1D();
+		Test1E();
+		Test2();
+		Test3();
+		Test4();
+		Test5();
+		Test6();
+		Test7();
+		Test8();
+		Test9();
+		Test10();
+		Test11();
+		if (bTestFPS == true)  TestFPS();
+	}
+
 	EndTests();
 	return 0;
 }
