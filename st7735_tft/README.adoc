@@ -25,5 +25,5 @@ image::wiring.png[]
 == Practical realization
 [[ssd1306_i2c_image]]
 [pdfwidth=75%]
-.Realization on breadboard
+.Realization on breadboard. Testing program contains many other nice screens.
 image::screens.jpg[]
