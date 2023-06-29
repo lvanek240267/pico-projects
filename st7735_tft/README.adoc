@@ -21,3 +21,9 @@ image::wiring.png[]
 * GP3 -> RS
 * GP19 (SPI0 TX) -> MOSI
 * GP18 (SPI0 SCK) -> CLK
+
+== Practical realization
+[[ssd1306_i2c_image]]
+[pdfwidth=75%]
+.Realization on breadboard
+image::screens.jpg[]
