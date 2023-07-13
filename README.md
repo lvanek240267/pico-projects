@@ -4,7 +4,7 @@
 
 Some personal projects for playing with Raspberry Pi Pico. Nothing interesting here.
 
-###  Examples
+###  Aplications
 
 App|Description
 ---|---
