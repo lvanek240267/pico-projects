@@ -22,10 +22,10 @@ App|Description
 
 App|Description 
 ---|---
-[st7735_tft](st7735_tft) | Testing ST7735_TFT_PICO library by Gavin Lyons
+[st7735_tft](st7735_tft) | Testing ST7735_TFT_PICO library by Gavin Lyons with one display
 
 ### Two ST7753 TFT Displays
 
 App|Description 
 ---|---
-[st7735_tft_2](st7735_tft_2) | Testing ST7735_TFT_PICO library by Gavin Lyons
+[st7735_tft_2](st7735_tft_2) | Testing ST7735_TFT_PICO library by Gavin Lyons with two displays
