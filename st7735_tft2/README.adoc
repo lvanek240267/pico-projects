@@ -24,11 +24,11 @@ image::wiring.png[]
 * GP18 (SPI0 SCK) -> CLK
 * =========================
 * Second display:
-* GP9 (SPI0 CSn) -> CS
+* GP9 (SPI1 CSn) -> CS
 * GP16 -> RST
 * GP4 -> RS
-* GP11 (SPI0 TX) -> MOSI
-* GP10 (SPI0 SCK) -> CLK
+* GP11 (SPI1 TX) -> MOSI
+* GP10 (SPI1 SCK) -> CLK
 
 == Practical realization
 [[ssd1306_i2c_image]]
