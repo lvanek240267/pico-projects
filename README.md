@@ -28,4 +28,4 @@ App|Description
 
 App|Description 
 ---|---
-[st7735_tft_2](st7735_tft_2) | Testing ST7735_TFT_PICO library by Gavin Lyons with two displays
+[st7735_tft2](st7735_tft2) | Testing ST7735_TFT_PICO library by Gavin Lyons with two displays
