@@ -41,59 +41,97 @@
 #define CLOCK_DISPLAY_TIME 20
 
 // Section :: Globals 
-ST7735_TFT myTFT;
+ST7735_TFT myTFT1;
+ST7735_TFT myTFT2;
+
 bool bTestFPS = true; /**< turn on frame rate per second test , set true for ON */
 
 //  Section ::  Function Headers 
 
-void Setup(void);  // setup + user options
-void Test1(void);  // Print out  fonts 1-6
-void Test1A(void); // defined 16-bit Colors, text
-void Test1B(void); // print entire ASCII font 0 to 254, default font
-void Test1C(void); // print numbers int and float using draw functions
-void Test1D(void); // print class methods
-void Test1E(void); // Print out font 7 & 8 using draw functions
-void Test2(void);  // font sizes (2-5) + character draw using draw functions
-void Test3(void);  // pixels and lines
-void Test4(void);  // rectangles 
-void Test5(void);  // Circle
-void Test6(void);  // Triangles 
-void Test7(void);  // scroll
-void Test8(void);  // More shapes, media buttons graphic.
-void Test9(void);  // Rotate
-void Test10(void); // change modes test -> Invert, display on/off and Sleep.
-void Test11(void); // "clock demo" , icons, , font 7
-void TestFPS(void); // FPSturn on frame rate test if true
-void EndTests(void);
+void Setup1(void);  // setup + user options
+void Setup2(void);  // setup + user options
+void Test1(ST7735_TFT);  // Print out  fonts 1-6
+void Test1A(ST7735_TFT); // defined 16-bit Colors, text
+void Test1B(ST7735_TFT); // print entire ASCII font 0 to 254, default font
+void Test1C(ST7735_TFT); // print numbers int and float using draw functions
+void Test1D(ST7735_TFT); // print class methods
+void Test1E(ST7735_TFT); // Print out font 7 & 8 using draw functions
+void Test2(ST7735_TFT);  // font sizes (2-5) + character draw using draw functions
+void Test3(ST7735_TFT);  // pixels and lines
+void Test4(ST7735_TFT);  // rectangles 
+void Test5(ST7735_TFT);  // Circle
+void Test6(ST7735_TFT);  // Triangles 
+void Test7(ST7735_TFT);  // scroll
+void Test8(ST7735_TFT);  // More shapes, media buttons graphic.
+void Test9(ST7735_TFT);  // Rotate
+void Test10(ST7735_TFT); // change modes test -> Invert, display on/off and Sleep.
+void Test11(ST7735_TFT); // "clock demo" , icons, , font 7
+void TestFPS(ST7735_TFT); // FPSturn on frame rate test if true
+void EndTests(ST7735_TFT);
 
 //  Section ::  MAIN loop
 
 int main(void) 
 {
-	Setup();
+	Setup1();
+	Setup2();
 
 	for (int i = 0; i < 100; i++)
 	{
-		Test1();
-		Test1A();
-		Test1B();
-		Test1C();
-		Test1D();
-		Test1E();
-		Test2();
-		Test3();
-		Test4();
-		Test5();
-		Test6();
-		Test7();
-		Test8();
-		Test9();
-		Test10();
-		Test11();
-		if (bTestFPS == true)  TestFPS();
+		Test1(myTFT1);
+		Test1(myTFT2);
+
+		Test1A(myTFT1);
+		Test1A(myTFT2);
+
+		Test1B(myTFT1);
+		Test1B(myTFT2);
+
+		Test1C(myTFT1);
+		Test1C(myTFT2);
+
+		Test1D(myTFT1);
+		Test1D(myTFT2);
+
+		Test1E(myTFT1);
+		Test1E(myTFT2);
+
+		Test2(myTFT1);
+		Test2(myTFT2);
+
+		Test3(myTFT1);
+		Test3(myTFT2);
+
+		Test4(myTFT1);
+		Test4(myTFT2);
+
+		Test5(myTFT1);
+		Test5(myTFT2);
+
+		Test6(myTFT1);
+		Test6(myTFT2);
+
+		Test7(myTFT1);
+		Test7(myTFT2);
+
+		Test8(myTFT1);
+		Test8(myTFT2);
+
+		Test9(myTFT1);
+		Test9(myTFT2);
+
+		Test10(myTFT1);
+		Test10(myTFT2);
+
+		Test11(myTFT1);
+		Test11(myTFT2);
+
+		if (bTestFPS == true)  TestFPS(myTFT1);
+		if (bTestFPS == true)  TestFPS(myTFT2);
 	}
 
-	EndTests();
+	EndTests(myTFT1);
+	EndTests(myTFT2);
 	return 0;
 }
 // *** End OF MAIN **
@@ -103,7 +141,7 @@ int main(void)
 /*!
 	@brief setup + user options
 */
-void Setup(void)
+void Setup1(void)
 {
 
 	TFT_MILLISEC_DELAY(TEST_DELAY1);
@@ -113,9 +151,9 @@ void Setup(void)
 	
 	if (bhardwareSPI == true) { // hw spi
 		uint32_t TFT_SCLK_FREQ =  8000 ; // Spi freq in KiloHertz , 1000 = 1Mhz
-		myTFT.TFTInitSPIType(TFT_SCLK_FREQ, spi0); 
+		myTFT1.TFTInitSPIType(TFT_SCLK_FREQ, spi0); 
 	} else { // sw spi
-		myTFT.TFTInitSPIType(); 
+		myTFT1.TFTInitSPIType(); 
 	}
 //**********************************************************
 
@@ -127,7 +165,7 @@ void Setup(void)
 	int8_t DC_TFT = 3; // RS just means Register-Select. Some people call it DC for Data-Command. 
 	int8_t CS_TFT = 17; //2 ;  
 	int8_t RST_TFT = 15; //17;
-	myTFT.TFTSetupGPIO(RST_TFT, DC_TFT, CS_TFT, SCLK_TFT, SDIN_TFT);
+	myTFT1.TFTSetupGPIO(RST_TFT, DC_TFT, CS_TFT, SCLK_TFT, SDIN_TFT);
 //**********************************************************
 
 // ****** USER OPTION 2 Screen Setup ****** 
@@ -135,18 +173,62 @@ void Setup(void)
 	uint8_t OFFSET_ROW = 0; // 3, with screen manufacture tolerance/defects
 	uint16_t TFT_WIDTH = 128;// Screen width in pixels
 	uint16_t TFT_HEIGHT = 160; // Screen height in pixels
-	myTFT.TFTInitScreenSize(OFFSET_COL, OFFSET_ROW , TFT_WIDTH , TFT_HEIGHT);
+	myTFT1.TFTInitScreenSize(OFFSET_COL, OFFSET_ROW , TFT_WIDTH , TFT_HEIGHT);
 // ******************************************
 
 // ******** USER OPTION 3 PCB_TYPE  **************************
-	myTFT.TFTInitPCBType(myTFT.TFT_ST7735R_Red); // pass enum,4 choices,see README
+	myTFT1.TFTInitPCBType(myTFT1.TFT_ST7735R_Red); // pass enum,4 choices,see README
+//**********************************************************
+}
+
+/*!
+	@brief setup + user options
+*/
+void Setup2(void)
+{
+
+	TFT_MILLISEC_DELAY(TEST_DELAY1);
+	
+//*************** USER OPTION 0 SPI_SPEED + TYPE ***********
+	bool bhardwareSPI = true; // true for hardware spi, 
+	
+	if (bhardwareSPI == true) { // hw spi
+		uint32_t TFT_SCLK_FREQ =  8000 ; // Spi freq in KiloHertz , 1000 = 1Mhz
+		myTFT2.TFTInitSPIType(TFT_SCLK_FREQ, spi0); 
+	} else { // sw spi
+		myTFT2.TFTInitSPIType(); 
+	}
+//**********************************************************
+
+// ******** USER OPTION 1 GPIO *********
+// NOTE if using Hardware SPI clock and data pins will be tied to 
+// the chosen interface eg Spi0 CLK=18 DIN=19)
+	int8_t SDIN_TFT = 11; 
+	int8_t SCLK_TFT = 10; 
+	int8_t DC_TFT = 4; // RS just means Register-Select. Some people call it DC for Data-Command. 
+	int8_t CS_TFT = 9; //2 ;  
+	int8_t RST_TFT = 16; //17;
+	myTFT2.TFTSetupGPIO(RST_TFT, DC_TFT, CS_TFT, SCLK_TFT, SDIN_TFT);
+//**********************************************************
+
+// ****** USER OPTION 2 Screen Setup ****** 
+	uint8_t OFFSET_COL = 0;  // 2, These offsets can be adjusted for any issues->
+	uint8_t OFFSET_ROW = 0; // 3, with screen manufacture tolerance/defects
+	uint16_t TFT_WIDTH = 128;// Screen width in pixels
+	uint16_t TFT_HEIGHT = 160; // Screen height in pixels
+	myTFT2.TFTInitScreenSize(OFFSET_COL, OFFSET_ROW , TFT_WIDTH , TFT_HEIGHT);
+// ******************************************
+
+// ******** USER OPTION 3 PCB_TYPE  **************************
+	myTFT2.TFTInitPCBType(myTFT2.TFT_ST7735R_Red); // pass enum,4 choices,see README
 //**********************************************************
 }
 
 /*!
 	@brief print out fonts 1-6
 */
-void Test1(void) {
+void Test1(ST7735_TFT myTFT) 
+{
 
 	char teststr1[] = "Default 1";
 	char teststr2[] = "THICK 2";
@@ -177,7 +259,8 @@ void Test1(void) {
 /*!
 	@brief  Defined 16-bit Colors, text
 */
-void Test1A(void) {
+void Test1A(ST7735_TFT myTFT) 
+{
 	char teststr1[] = "WHITE";
 	char teststr2[] = "BLUE";
 	char teststr3[] = "RED";
@@ -209,7 +292,8 @@ void Test1A(void) {
 /*!
 	@brief   print entire ASCII font 0 to 254, default font
 */
-void Test1B(void) {
+void Test1B(ST7735_TFT myTFT) 
+{
 	uint8_t row = 5;
 	uint8_t col = 5;
 	for (char i = 0; i < 126; i++) {
@@ -242,7 +326,7 @@ void Test1B(void) {
 /*!
 	@brief  print numbers int and float using draw functions
 */
-void Test1C(void)
+void Test1C(ST7735_TFT myTFT)
 {
 	int myInt=931;
 	char myStr[5];
@@ -263,8 +347,8 @@ void Test1C(void)
 /*!
 	@brief  print class methods
 */
-void Test1D(void){
-
+void Test1D(ST7735_TFT myTFT)
+{
 	uint8_t numPos = 47;
 
 	myTFT.setTextSize(1);  // Test a string with print 
@@ -318,7 +402,7 @@ void Test1D(void){
 /*!
 	@brief  print out font 7 & 8 using draw functions
 */
-void Test1E(void)
+void Test1E(ST7735_TFT myTFT)
 {
 	// Note fonts 7 and 8 are numbers only + : 
 	char teststr1[] = "12:81";
@@ -339,7 +423,8 @@ void Test1E(void)
 /*!
 	@brief  font sizes (2-5) + character draw using draw functions
 */
-void Test2(void) {
+void Test2(ST7735_TFT myTFT) 
+{
 	myTFT.TFTFontNum(myTFT.TFTFont_Default);
 	char teststr1[] = "Size2";
 	myTFT.TFTdrawText(0, 5, teststr1, ST7735_WHITE, ST7735_BLACK, 2);
@@ -354,7 +439,7 @@ void Test2(void) {
 /*!
 	@brief   pixels and lines
 */
-void Test3(void)  
+void Test3(ST7735_TFT myTFT)  
 {
 	myTFT.TFTdrawPixel(85, 5, ST7735_WHITE);
 	myTFT.TFTdrawPixel(87, 7, ST7735_WHITE);
@@ -370,7 +455,8 @@ void Test3(void)
 /*!
 	@brief  rectangles
 */
-void Test4(void) {
+void Test4(ST7735_TFT myTFT) 
+{
 	myTFT.TFTdrawRectWH(5, 5, 20, 20, ST7735_RED);
 	myTFT.TFTfillRectangle(45, 5, 20, 20, ST7735_YELLOW);
 	myTFT.TFTfillRect(85, 5, 20, 20, ST7735_GREEN);
@@ -384,7 +470,8 @@ void Test4(void) {
 /*!
 	@brief  circles
 */
-void Test5(void) {
+void Test5(ST7735_TFT myTFT) 
+{
 	myTFT.TFTdrawCircle(40, 20, 15, ST7735_GREEN);
 	myTFT.TFTfillCircle(80, 20, 15, ST7735_YELLOW);
 }
@@ -392,7 +479,8 @@ void Test5(void) {
 /*!
 	@brief  triangles
 */
-void Test6(void) {
+void Test6(ST7735_TFT myTFT) 
+{
 	myTFT.TFTdrawTriangle(5, 80, 50, 40, 95, 80, ST7735_CYAN);
 	myTFT.TFTfillTriangle(55, 120, 100, 90, 127, 120, ST7735_RED);
 
@@ -403,7 +491,7 @@ void Test6(void) {
 /*!
 	@brief  Vertical Scroll test
 */
-void Test7(void) 
+void Test7(ST7735_TFT myTFT) 
 {
 	const uint8_t LINES = 10, LINE_SIZE = 10, LINE_OFFSET = 3, TOP_FIXED = 0, BOTTOM_FIXED = 0;
 	char teststr1[] = "Scroll test";
@@ -432,7 +520,7 @@ void Test7(void)
 /*!
 	@brief  More shapes, media buttons graphic.
 */
-void Test8() 
+void Test8(ST7735_TFT myTFT) 
 {
 	char teststr1[] = "Press Play";
 	//Draw play button 
@@ -452,7 +540,7 @@ void Test8()
 /*!
 	@brief  Rotate
 */
-void Test9()
+void Test9(ST7735_TFT myTFT)
 {
 	char teststr0[] = "Rotate 0"; //normal
 	char teststr1[] = "Rotate 90"; // 90
@@ -487,7 +575,7 @@ void Test9()
 /*!
 	@brief  change modes test -> Invert, display on/off and Sleep.
 */
-void Test10()
+void Test10(ST7735_TFT myTFT)
 {
 	char teststr1[] = "Mode test";
 	myTFT.TFTfillRoundRect(25, 10, 78, 60, 8, ST7735_YELLOW);
@@ -511,7 +599,7 @@ void Test10()
 /*!
 	@brief   "clock demo" , icons, , font 7
 */
-void Test11(void)
+void Test11(ST7735_TFT myTFT)
 {
 	myTFT.TFTfillScreen(ST7735_BLACK);
 
@@ -599,7 +687,7 @@ void Test11(void)
 /*!
 	@brief   Frame rate per second test, FPS test. Optionally specify -> set bool bTestFPS
 */
-void TestFPS(void)
+void TestFPS(ST7735_TFT myTFT)
 {
 	// Values to count frame rate per second
 	long previousMillis  = 0;
@@ -654,7 +742,7 @@ void TestFPS(void)
 /*!
 	@brief  Stop testing and shutdown the TFT
 */
-void EndTests(void)
+void EndTests(ST7735_TFT myTFT)
 {
 	char teststr1[] = "Tests over";
 	myTFT.TFTfillScreen(ST7735_BLACK);
