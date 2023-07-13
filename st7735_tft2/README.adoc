@@ -16,14 +16,14 @@ also screen resolution.
 .Wiring Diagram for Raspberry Pi Pico and ST7735 TFT display. Only 1st display is painted. So:
 image::wiring.png[]
 
-First display:
+* First display:
 * GP17 (SPI0 CSn) -> CS
 * GP15 -> RST
 * GP3 -> RS
 * GP19 (SPI0 TX) -> MOSI
 * GP18 (SPI0 SCK) -> CLK
-
-Second display:
+* =========================
+* Second display:
 * GP9 (SPI0 CSn) -> CS
 * GP16 -> RST
 * GP4 -> RS
