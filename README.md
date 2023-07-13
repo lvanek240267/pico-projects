@@ -4,7 +4,7 @@
 
 Some personal projects for playing with Raspberry Pi Pico. Nothing interesting here.
 
-###  Aplications
+###  Blink sample
 
 App|Description
 ---|---
