@@ -2,7 +2,12 @@
 .vscode
 _deps
 cmake-*
-build
 .DS_Store
 *.pdf
+*.obj
 CMakeCache.txt
+build/.cmake
+build/.ninja_log
+build/.ninja_deps
+build/pico-sdk
+build/CMakeFiles
