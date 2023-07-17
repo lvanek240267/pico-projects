@@ -194,7 +194,7 @@ void Setup2(void)
 	
 	if (bhardwareSPI == true) { // hw spi
 		uint32_t TFT_SCLK_FREQ =  8000 ; // Spi freq in KiloHertz , 1000 = 1Mhz
-		myTFT2.TFTInitSPIType(TFT_SCLK_FREQ, spi0); 
+		myTFT2.TFTInitSPIType(TFT_SCLK_FREQ, spi1); 
 	} else { // sw spi
 		myTFT2.TFTInitSPIType(); 
 	}
