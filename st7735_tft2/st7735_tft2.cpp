@@ -202,7 +202,7 @@ void Setup2(void)
 
 // ******** USER OPTION 1 GPIO *********
 // NOTE if using Hardware SPI clock and data pins will be tied to 
-// the chosen interface eg Spi0 CLK=18 DIN=19)
+// the chosen interface eg Spi1 CLK=10 DIN=11)
 	int8_t SDIN_TFT = 11; 
 	int8_t SCLK_TFT = 10; 
 	int8_t DC_TFT = 4; // RS just means Register-Select. Some people call it DC for Data-Command. 
