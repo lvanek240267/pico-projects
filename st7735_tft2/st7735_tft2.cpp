@@ -341,7 +341,6 @@ void Test1C(ST7735_TFT myTFT)
 	
 	TFT_MILLISEC_DELAY(TEST_DELAY2);
 	//myTFT.TFTfillScreen(ST7735_BLACK);
-		
 }
 
 /*!
