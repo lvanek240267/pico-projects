@@ -252,7 +252,7 @@ void Test1(ST7735_TFT myTFT)
 	myTFT.TFTFontNum(myTFT.TFTFont_HomeSpun);
 	myTFT.TFTdrawText(5, 105, teststr6, ST7735_YELLOW, ST7735_BLACK, 2);
 	TFT_MILLISEC_DELAY(TEST_DELAY5);
-	myTFT.TFTfillScreen(ST7735_BLACK);
+	//myTFT.TFTfillScreen(ST7735_BLACK);
 	myTFT.TFTFontNum(myTFT.TFTFont_Default);
 }
 
@@ -286,7 +286,7 @@ void Test1A(ST7735_TFT myTFT)
 	myTFT.TFTdrawText(55, 70, teststr11, ST7735_DGREEN, ST7735_BLACK, 1);
 	myTFT.TFTdrawText(55, 85, teststr12 , ST7735_ORANGE, ST7735_BLACK, 1);
 	TFT_MILLISEC_DELAY(TEST_DELAY5);
-	myTFT.TFTfillScreen(ST7735_BLACK);
+	//myTFT.TFTfillScreen(ST7735_BLACK);
 }
 
 /*!
@@ -320,7 +320,7 @@ void Test1B(ST7735_TFT myTFT)
 		}
 	}
 	TFT_MILLISEC_DELAY(TEST_DELAY5);
-	myTFT.TFTfillScreen(ST7735_BLACK);
+	//myTFT.TFTfillScreen(ST7735_BLACK);
 }
 
 /*!
@@ -340,7 +340,7 @@ void Test1C(ST7735_TFT myTFT)
 	myTFT.TFTdrawText(5, 65, myStr2, ST7735_RED, ST7735_BLACK, 3);
 	
 	TFT_MILLISEC_DELAY(TEST_DELAY2);
-	myTFT.TFTfillScreen(ST7735_BLACK);
+	//myTFT.TFTfillScreen(ST7735_BLACK);
 		
 }
 
@@ -396,7 +396,7 @@ void Test1D(ST7735_TFT myTFT)
 	myTFT.print(numPos , HEX); // 2F
 
 	TFT_MILLISEC_DELAY(TEST_DELAY5);
-	myTFT.TFTfillScreen(ST7735_BLACK);
+	//myTFT.TFTfillScreen(ST7735_BLACK);
 }
 
 /*!
@@ -417,7 +417,7 @@ void Test1E(ST7735_TFT myTFT)
 	myTFT.TFTdrawTextNumFont(0, 100, teststr2, ST7735_GREEN, ST7735_RED);
 	
 	TFT_MILLISEC_DELAY(TEST_DELAY5);
-	myTFT.TFTfillScreen(ST7735_BLACK);
+	//myTFT.TFTfillScreen(ST7735_BLACK);
 }
 
 /*!
@@ -433,7 +433,7 @@ void Test2(ST7735_TFT myTFT)
 	myTFT.TFTdrawChar(0, 85, '5', ST7735_WHITE, ST7735_BLACK, 5);
 
 	TFT_MILLISEC_DELAY(TEST_DELAY2);
-	myTFT.TFTfillScreen(ST7735_BLACK);
+	//myTFT.TFTfillScreen(ST7735_BLACK);
 }
 
 /*!
@@ -449,7 +449,7 @@ void Test3(ST7735_TFT myTFT)
 	myTFT.TFTdrawFastHLine(60, 60, 40, ST7735_YELLOW);
 
 	TFT_MILLISEC_DELAY(TEST_DELAY2);
-	myTFT.TFTfillScreen(ST7735_BLACK);
+	//myTFT.TFTfillScreen(ST7735_BLACK);
 }
 
 /*!
@@ -464,7 +464,7 @@ void Test4(ST7735_TFT myTFT)
 	myTFT.TFTfillRoundRect(70, 60, 50, 50, 10, ST7735_WHITE);
 
 	TFT_MILLISEC_DELAY(TEST_DELAY2);
-	myTFT.TFTfillScreen(ST7735_BLACK);
+	//myTFT.TFTfillScreen(ST7735_BLACK);
 }
 
 /*!
@@ -514,7 +514,7 @@ void Test7(ST7735_TFT myTFT)
 	TFT_MILLISEC_DELAY(TEST_DELAY1);
 	}
 	myTFT.TFTchangeMode(myTFT.TFT_Normal_mode); 
-	myTFT.TFTfillScreen(ST7735_BLACK);
+	//myTFT.TFTfillScreen(ST7735_BLACK);
 }
 
 /*!
@@ -569,7 +569,7 @@ void Test9(ST7735_TFT myTFT)
 	
 	myTFT.TFTsetRotation(myTFT.TFT_Degrees_0);
 	myTFT.TFTchangeMode(myTFT.TFT_Normal_mode);
-	myTFT.TFTfillScreen(ST7735_BLACK);
+	//myTFT.TFTfillScreen(ST7735_BLACK);
 }
 
 /*!
@@ -680,7 +680,7 @@ void Test11(ST7735_TFT myTFT)
 	} // end of while
 		
 	TFT_MILLISEC_DELAY(TEST_DELAY2);
-	myTFT.TFTfillScreen(ST7735_BLACK);
+	//myTFT.TFTfillScreen(ST7735_BLACK);
 	myTFT.TFTFontNum(myTFT.TFTFont_Default);
 } //end of test 11
 
@@ -699,43 +699,43 @@ void TestFPS(ST7735_TFT myTFT)
 	uint16_t shapeColor = 0x2222;
 	myTFT.setTextSize(1);
 
-	while(1){
-
-	unsigned long currentMillis = to_ms_since_boot(get_absolute_time());
-
-	if (currentMillis  - previousMillis  >= 1000) // every second
+	while(1)
 	{
-		fps = currentFramerate - lastFramerate;
-		lastFramerate = currentFramerate ;
-		previousMillis  = currentMillis;
-		seconds++;
-		shapeColor = rand() % 60000;
-		if (count >= 3000)return; // end if count gets to 3000
-	}
-	currentFramerate++;
-	count++;
-	
-	//  ** Code to test ** 
-	// print seconds
-	myTFT.TFTsetCursor(5,15);
-	myTFT.print("Secs :");
-	myTFT.TFTsetCursor(50 ,15);
-	myTFT.print(seconds);
-	// print fps
-	myTFT.TFTsetCursor(5,25);
-	myTFT.print("FPS :");
-	myTFT.TFTsetCursor(50,25);
-	myTFT.print(fps);
-	//print count
-	myTFT.TFTsetCursor(5,35);
-	myTFT.print("Count :");
-	myTFT.TFTsetCursor(50,35);
-	myTFT.print(count);
-	// print some graphics
-	myTFT.TFTdrawCircle(90, 90, 10, shapeColor);
-	myTFT.TFTdrawRectWH(40, 80,20, 20,  shapeColor << 1);
-	myTFT.TFTdrawRoundRect(5, 80, 20, 20, 2 , shapeColor >> 1);
-	//  **** 
+		unsigned long currentMillis = to_ms_since_boot(get_absolute_time());
+
+		if (currentMillis  - previousMillis  >= 1000) // every second
+		{
+			fps = currentFramerate - lastFramerate;
+			lastFramerate = currentFramerate ;
+			previousMillis  = currentMillis;
+			seconds++;
+			shapeColor = rand() % 60000;
+			if (count >= 3000)return; // end if count gets to 3000
+		}
+		currentFramerate++;
+		count++;
+		
+		//  ** Code to test ** 
+		// print seconds
+		myTFT.TFTsetCursor(5,15);
+		myTFT.print("Secs :");
+		myTFT.TFTsetCursor(50 ,15);
+		myTFT.print(seconds);
+		// print fps
+		myTFT.TFTsetCursor(5,25);
+		myTFT.print("FPS :");
+		myTFT.TFTsetCursor(50,25);
+		myTFT.print(fps);
+		//print count
+		myTFT.TFTsetCursor(5,35);
+		myTFT.print("Count :");
+		myTFT.TFTsetCursor(50,35);
+		myTFT.print(count);
+		// print some graphics
+		myTFT.TFTdrawCircle(90, 90, 10, shapeColor);
+		myTFT.TFTdrawRectWH(40, 80,20, 20,  shapeColor << 1);
+		myTFT.TFTdrawRoundRect(5, 80, 20, 20, 2 , shapeColor >> 1);
+		//  **** 
 	}
 }
 
