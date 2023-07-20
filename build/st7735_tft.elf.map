@@ -1345,9 +1345,9 @@ Discarded input sections
  .comment       0x00000000       0x4a st7735_tft/CMakeFiles/st7735_tft.dir/st7735/ST7735_TFT_Bitmap_Data.cpp.obj
  .ARM.attributes
                 0x00000000       0x2c st7735_tft/CMakeFiles/st7735_tft.dir/st7735/ST7735_TFT_Bitmap_Data.cpp.obj
- .text          0x00000000        0x0 C:\Users\lvanek\AppData\Local\Temp\ccOKEqBr.o
- .data          0x00000000        0x0 C:\Users\lvanek\AppData\Local\Temp\ccOKEqBr.o
- .bss           0x00000000        0x0 C:\Users\lvanek\AppData\Local\Temp\ccOKEqBr.o
+ .text          0x00000000        0x0 C:\Users\lvanek\AppData\Local\Temp\ccsc2GRV.o
+ .data          0x00000000        0x0 C:\Users\lvanek\AppData\Local\Temp\ccsc2GRV.o
+ .bss           0x00000000        0x0 C:\Users\lvanek\AppData\Local\Temp\ccsc2GRV.o
  .text          0x00000000        0x0 c:/picosdk/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libstdc++.a(pure.o)
  .data          0x00000000        0x0 c:/picosdk/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libstdc++.a(pure.o)
  .bss           0x00000000        0x0 c:/picosdk/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libstdc++.a(pure.o)
@@ -1890,7 +1890,7 @@ LOAD c:/picosdk/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../.
 .boot2          0x10000000      0x100
                 0x10000000                __boot2_start__ = .
  *(.boot2)
- .boot2         0x10000000      0x100 C:\Users\lvanek\AppData\Local\Temp\ccOKEqBr.o
+ .boot2         0x10000000      0x100 C:\Users\lvanek\AppData\Local\Temp\ccsc2GRV.o
                 0x10000100                __boot2_end__ = .
                 0x00000001                ASSERT (((__boot2_end__ - __boot2_start__) == 0x100), ERROR: Pico second stage bootloader must be 256 bytes in size)
 
@@ -3838,7 +3838,7 @@ LOAD st7735_tft/CMakeFiles/st7735_tft.dir/st7735/ST7735_TFT_graphics.cpp.obj
 LOAD st7735_tft/CMakeFiles/st7735_tft.dir/st7735/ST7735_TFT_Print.cpp.obj
 LOAD st7735_tft/CMakeFiles/st7735_tft.dir/st7735/ST7735_TFT_Font.cpp.obj
 LOAD st7735_tft/CMakeFiles/st7735_tft.dir/st7735/ST7735_TFT_Bitmap_Data.cpp.obj
-LOAD C:\Users\lvanek\AppData\Local\Temp\ccOKEqBr.o
+LOAD C:\Users\lvanek\AppData\Local\Temp\ccsc2GRV.o
 LOAD c:/picosdk/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libstdc++.a
 LOAD c:/picosdk/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libm.a
 START GROUP
@@ -3853,7 +3853,7 @@ LOAD c:/picosdk/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../.
 END GROUP
 LOAD c:/picosdk/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/crtend.o
 LOAD c:/picosdk/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/crtn.o
-OUTPUT(st7735_tft\======st7735_tft.elf elf32-littlearm)
+OUTPUT(st7735_tft\st7735_tft.elf elf32-littlearm)
 LOAD linker stubs
 
 .ARM.attributes
@@ -3941,7 +3941,7 @@ LOAD linker stubs
  .ARM.attributes
                 0x0000066e       0x2c st7735_tft/CMakeFiles/st7735_tft.dir/st7735/ST7735_TFT_Font.cpp.obj
  .ARM.attributes
-                0x0000069a       0x22 C:\Users\lvanek\AppData\Local\Temp\ccOKEqBr.o
+                0x0000069a       0x22 C:\Users\lvanek\AppData\Local\Temp\ccsc2GRV.o
  .ARM.attributes
                 0x000006bc       0x2c c:/picosdk/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libstdc++.a(pure.o)
  .ARM.attributes

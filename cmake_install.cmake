@@ -43,6 +43,8 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("D:/Home/Development/Personal/PICO/pico-projects/build/my_blink/cmake_install.cmake")
   include("D:/Home/Development/Personal/PICO/pico-projects/build/neopixel/cmake_install.cmake")
   include("D:/Home/Development/Personal/PICO/pico-projects/build/st7735_tft/cmake_install.cmake")
+  include("D:/Home/Development/Personal/PICO/pico-projects/build/st7735_tft2/cmake_install.cmake")
+  include("D:/Home/Development/Personal/PICO/pico-projects/build/st7735_bmp280/cmake_install.cmake")
 
 endif()
 
