@@ -1,14 +1,13 @@
-= Testing ST7735_TFT_PICO library by Gavin Lyons
+= ST7735 TFT displays, BMP280 sensor and Raspberry PI Pico
 
 == Description
 [[description]]
 
-This is here only for testing two 1.8" 128x160 TFT displays with controller ST7735, SPI.
+Reading data from BMP280 I2C sensor.
+Using two 1.8" 128x160 TFT displays with controller ST7735, SPI to dispay.
 
-Original repository: https://github.com/gavinlyonsrepo/ST7735_TFT_PICO
+Original ST7735 repository: https://github.com/gavinlyonsrepo/ST7735_TFT_PICO
 
-I have imported it to Visual Studio Code project. I changed PICO pin assignements and 
-also screen resolution.
 
 == Wiring information
 [[ssd1306_i2c_wiring]]
@@ -33,5 +32,5 @@ image::wiring.png[]
 == Practical realization
 [[ssd1306_i2c_image]]
 [pdfwidth=75%]
-.Realization on breadboard. Testing program contains many other nice screens.
+.Realization on breadboard.
 image::screens.jpg[]

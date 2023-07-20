@@ -48,8 +48,8 @@ bool bTestFPS = true; /**< turn on frame rate per second test , set true for ON 
 
 //  Section ::  Function Headers 
 
-void Setup1(void);  // setup + user options
-void Setup2(void);  // setup + user options
+void SetupTFT1(void);  // setup + user options
+void SetupTFT2(void);  // setup + user options
 void Test1(ST7735_TFT);  // Print out  fonts 1-6
 void Test1A(ST7735_TFT); // defined 16-bit Colors, text
 void Test1B(ST7735_TFT); // print entire ASCII font 0 to 254, default font
@@ -73,8 +73,8 @@ void EndTests(ST7735_TFT);
 
 int main(void) 
 {
-	Setup1();
-	Setup2();
+	SetupTFT1();
+	SetupTFT2();
 
 	for (int i = 0; i < 100; i++)
 	{
@@ -141,7 +141,7 @@ int main(void)
 /*!
 	@brief setup + user options
 */
-void Setup1(void)
+void SetupTFT1(void)
 {
 
 	TFT_MILLISEC_DELAY(TEST_DELAY1);
@@ -184,7 +184,7 @@ void Setup1(void)
 /*!
 	@brief setup + user options
 */
-void Setup2(void)
+void SetupTFT2(void)
 {
 
 	TFT_MILLISEC_DELAY(TEST_DELAY1);
