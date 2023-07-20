@@ -219,12 +219,15 @@ int main(void)
         bmp280_read_raw(&raw_temperature, &raw_pressure, &raw_humidity);
         int32_t temperature = bmp280_convert_temp(raw_temperature, &params);
         int32_t pressure = bmp280_convert_pressure(raw_pressure, raw_temperature, &params);
-		int32_t humiditty = bmp280_convert_humidity(raw_humidity, raw_temperature, &params);
+		int32_t humidity = bmp280_convert_humidity(raw_humidity, raw_temperature, &params);
         
 		printf("Pressure = %.3f kPa\n", pressure / 1000.f);
         printf("Temp. = %.2f C\n", temperature / 100.f);
-		sprintf(strPresValue, "Pressure = %.3f kPa\n", pressure / 1000.f);
-        sprintf(strTempValue, "Temp. = %.2f C\n", temperature / 100.f);
+		printf("Humidity = %.1f %\n", humidity / 100.f);
+		
+		sprintf(strPresValue, "%.3f", pressure / 1000.f);
+        sprintf(strTempValue, "%.2f", temperature / 100.f);
+		sprintf(strTempValue, "%.1f", humidity / 100.f);
 
 		uint16_t colorTemp;
 		if(temperature < 0)
