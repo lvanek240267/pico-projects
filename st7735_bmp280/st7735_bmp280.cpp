@@ -211,12 +211,12 @@ int main(void)
         int32_t pressure = bmp280_convert_pressure(raw_pressure, raw_temperature, &params);
 	    
 		double dPressure = pressure / 100.f;
-		dPressure *= 1.38;
+		dPressure *= 1.08;
 
-		printf("Pressure = %.3f kPa\n", dPressure / 100.f);
+		printf("Pressure = %.3f kPa\n", dPressure);
         printf("Temp. = %.2f C\n", temperature / 100.f);
 		
-		sprintf(strPresValue, "%.1f", dPressure / 100.f);
+		sprintf(strPresValue, "%.1f", dPressure);
         sprintf(strTempValue, "%.1f", temperature / 100.f);
 
 		uint16_t colorTemp;
