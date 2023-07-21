@@ -28,6 +28,7 @@ add_subdirectory(neopixel)
 add_subdirectory(st7735_tft)
 add_subdirectory(st7735_tft2)
 add_subdirectory(st7735_bmp280)
+add_subdirectory(st7735_bme280)
 
 add_compile_options(-Wall
         -Wno-format          # int != int32_t as far as the compiler is concerned because gcc has int32_t as long int

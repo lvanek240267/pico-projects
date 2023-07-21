@@ -1,0 +1,35 @@
+= ST7735 TFT displays, BMP280 sensor and Raspberry PI Pico
+
+== Description
+[[description]]
+
+Reading data from BMP280 I2C sensor.
+Using two 1.8" 128x160 TFT displays with controller ST7735, SPI to display.
+
+Original ST7735 repository: https://github.com/gavinlyonsrepo/ST7735_TFT_PICO
+
+== Wiring information
+[[ssd1306_i2c_wiring]]
+[pdfwidth=75%]
+.Wiring Diagram for Raspberry Pi Pico and ST7735 TFT display. Only 1st display is painted. So:
+image::wiring.png[]
+
+* First display:
+* GP17 (SPI0 CSn) -> CS
+* GP15 -> RST
+* GP3 -> RS
+* GP19 (SPI0 TX) -> MOSI
+* GP18 (SPI0 SCK) -> CLK
+* =========================
+* Second display:
+* GP9 (SPI1 CSn) -> CS
+* GP16 -> RST
+* GP4 -> RS
+* GP11 (SPI1 TX) -> MOSI
+* GP10 (SPI1 SCK) -> CLK
+
+== Practical realization
+[[ssd1306_i2c_image]]
+[pdfwidth=75%]
+.Realization on breadboard.
+image::screens.jpg[]

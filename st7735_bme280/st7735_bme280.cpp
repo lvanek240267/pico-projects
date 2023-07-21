@@ -1,7 +1,7 @@
 /*!
-	@file     st7735_bmp280.cpp
+	@file     st7735_bme280.cpp
 	@author   Gavin Lyons, Lumir Vanek
-	@brief Two ST7735_TFT displays + BMP280 sensor.
+	@brief Two ST7735_TFT displays + BME280 sensor.
 			
 	@note  See USER OPTIONS 0-3 in SETUP function
 */
@@ -33,7 +33,7 @@ bool bTestFPS = true; /**< turn on frame rate per second test , set true for ON 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
- /* BMP280 temperature and pressure sensor
+ /* BME280 temperature, pressure and humidity sensor
 
     NOTE: Ensure the device is capable of being driven at 3.3v NOT 5v. The Pico
     GPIO (and therefore I2C) cannot be used at 5v.
@@ -43,7 +43,7 @@ bool bTestFPS = true; /**< turn on frame rate per second test , set true for ON 
 
     Connections on Raspberry Pi Pico board, other boards may vary.
 
-    GPIO PICO_DEFAULT_I2C_SDA_PIN (on Pico this is GP4 (pin 6)) -> SDA on BMP280
+    GPIO PICO_DEFAULT_I2C_SDA_PIN (on Pico this is GP4 (pin 6)) -> SDA on BME280
     board
     GPIO PICO_DEFAULT_I2C_SCK_PIN (on Pico this is GP5 (pin 7)) -> SCL on
     BMP280 board
@@ -52,7 +52,7 @@ bool bTestFPS = true; /**< turn on frame rate per second test , set true for ON 
  */
 
 // device has default bus address of 0x76
-#define BMP280_ADDRESS _u(0x76) // If you leave SDO unconnected, it will be connected to 3.3V (address 0x77)
+#define BME280_ADDRESS _u(0x76) // If you leave SDO unconnected, it will be connected to 3.3V (address 0x77)
 
 // hardware registers
 #define REG_CONFIG _u(0xF5)
@@ -113,6 +113,14 @@ struct bmp280_calib_param
     int16_t dig_p7;
     int16_t dig_p8;
     int16_t dig_p9;
+
+	// humidity params
+    uint16_t dig_h1;
+    int16_t dig_h2;
+    uint16_t dig_h3;
+	int16_t dig_h4;
+	int16_t dig_h5;
+	int16_t dig_h6;
 };
 
 double t_fine = 0;
@@ -147,13 +155,14 @@ void TestFPS(ST7735_TFT); // FPSturn on frame rate test if true
 void EndTests(ST7735_TFT);
 
 void bmp280_init();
-void bmp280_read_raw(int32_t* temp, int32_t* pressure);
+void bmp280_read_raw(int32_t* temp, int32_t* pressure, int32_t* humidity);
 void bmp280_reset();
 int32_t bmp280_convert(int32_t temp, struct bmp280_calib_param* params);
 int32_t bmp280_convert_temp(int32_t temp, struct bmp280_calib_param* params);
 int32_t bmp280_convert_pressure(int32_t pressure, int32_t temp, struct bmp280_calib_param* params);
+int32_t bmp280_convert_humidity(int32_t raw_humidity, int32_t temp, struct bmp280_calib_param* params);
 void bmp280_get_calib_params(struct bmp280_calib_param* params);
-
+void bmp280_get_calib_paramsHum(struct bmp280_calib_param* params);
 
 
 //  Section ::  MAIN loop
@@ -191,28 +200,35 @@ int main(void)
     // retrieve fixed compensation params
     struct bmp280_calib_param params;
     bmp280_get_calib_params(&params);
+	//bmp280_get_calib_paramsHum(&params);
 
     int32_t raw_temperature;
     int32_t raw_pressure;
 	int32_t raw_humidity;
 	char strTemp[] = "Temperat.";
 	char strPres[] = "Pressure";
+	char strHum[] = "Humidity";
 	char strTempUnit[] = "dg. C";
 	char strPresUnit[] = "kPa";
+	char strHumUnit[] = "%";
 	char strTempValue[10];
 	char strPresValue[10];
+	char strHumValue[10];
 
 	while (true) 
 	{
-        bmp280_read_raw(&raw_temperature, &raw_pressure);
+        bmp280_read_raw(&raw_temperature, &raw_pressure, &raw_humidity);
         int32_t temperature = bmp280_convert_temp(raw_temperature, &params);
         int32_t pressure = bmp280_convert_pressure(raw_pressure, raw_temperature, &params);
-	    
+		//int32_t humidity = bmp280_convert_humidity(raw_humidity, raw_temperature, &params);
+        
 		printf("Pressure = %.3f kPa\n", pressure / 1000.f);
         printf("Temp. = %.2f C\n", temperature / 100.f);
+		//printf("Humidity = %.1f %\n", humidity / 100.f);
 		
 		sprintf(strPresValue, "%.3f", pressure / 1000.f);
         sprintf(strTempValue, "%.2f", temperature / 100.f);
+		//sprintf(strTempValue, "%.1f", humidity / 100.f);
 
 		uint16_t colorTemp;
 		if(temperature < 0)
@@ -243,15 +259,18 @@ int main(void)
 		myTFT2.TFTFontNum(myTFT2.TFTFont_Default);
 
 		myTFT1.TFTdrawText(5, 10, strTemp, ST7735_RED, ST7735_BLACK, 2);
+		//myTFT1.TFTdrawText(85, 10, strHum, ST7735_BLUE, ST7735_BLACK, 2);
 		myTFT2.TFTdrawText(5, 10, strPres, ST7735_CYAN, ST7735_BLACK, 2);
 
 		myTFT1.TFTdrawText(5, 35, strTempValue, colorTemp, ST7735_BLACK, 2);
+		//myTFT1.TFTdrawText(5, 115, strHumValue, ST7735_BLUE, ST7735_BLACK, 2);
 		myTFT2.TFTdrawText(5, 35, strPresValue, ST7735_CYAN, ST7735_BLACK, 2);
 
-		//myTFT1.TFTFontNum(myTFT1.TFTFont_Wide);
-		//myTFT2.TFTFontNum(myTFT2.TFTFont_Wide);
+		myTFT1.TFTFontNum(myTFT1.TFTFont_Wide);
+		myTFT2.TFTFontNum(myTFT2.TFTFont_Wide);
 
 		myTFT1.TFTdrawText(5, 65, strTempUnit, ST7735_CYAN, ST7735_BLACK, 2);
+		//myTFT1.TFTdrawText(5, 145, strHumUnit, ST7735_BLUE, ST7735_BLACK, 2);
 		myTFT2.TFTdrawText(5, 65, strPresUnit, ST7735_RED, ST7735_BLACK, 2);
 		
 		TFT_MILLISEC_DELAY(TEST_DELAY1);
@@ -425,16 +444,16 @@ void bmp280_init()
     // send register number followed by its corresponding value
     buf[0] = REG_CONFIG;
     buf[1] = reg_config_val;
-    i2c_write_blocking(i2c_default, BMP280_ADDRESS, buf, 2, false);
+    i2c_write_blocking(i2c_default, BME280_ADDRESS, buf, 2, false);
 
     // osrs_t x1, osrs_p x4, normal mode operation
     const uint8_t reg_ctrl_meas_val = (0x01 << 5) | (0x03 << 2) | (0x03);
     buf[0] = REG_CTRL_MEAS;
     buf[1] = reg_ctrl_meas_val;
-    i2c_write_blocking(i2c_default, BMP280_ADDRESS, buf, 2, false);
+    i2c_write_blocking(i2c_default, BME280_ADDRESS, buf, 2, false);
 }
 
-void bmp280_read_raw(int32_t* temp, int32_t* pressure) 
+void bmp280_read_raw(int32_t* temp, int32_t* pressure, int32_t* humidity) 
 {
     // BMP280 data registers are auto-incrementing and we have 3 temperature and
     // pressure registers each, so we start at 0xF7 and read 6 bytes to 0xFC
@@ -442,19 +461,20 @@ void bmp280_read_raw(int32_t* temp, int32_t* pressure)
 
     uint8_t buf[6];
     uint8_t reg = REG_PRESSURE_MSB;
-    i2c_write_blocking(i2c_default, BMP280_ADDRESS, &reg, 1, true);  // true to keep master control of bus
-    i2c_read_blocking(i2c_default, BMP280_ADDRESS, buf, 6, false);  // false - finished with bus
+    i2c_write_blocking(i2c_default, BME280_ADDRESS, &reg, 1, true);  // true to keep master control of bus
+    i2c_read_blocking(i2c_default, BME280_ADDRESS, buf, 6, false);  // false - finished with bus
 
     // store the 20 bit read in a 32 bit signed integer for conversion
     *pressure = (buf[0] << 12) | (buf[1] << 4) | (buf[2] >> 4);
     *temp = (buf[3] << 12) | (buf[4] << 4) | (buf[5] >> 4);
+	//*humidity = (buf[6] << 12) | (buf[7] << 4) | (buf[8] >> 4);
 }
 
 void bmp280_reset() 
 {
     // reset the device with the power-on-reset procedure
     uint8_t buf[2] = { REG_RESET, 0xB6 };
-    i2c_write_blocking(i2c_default, BMP280_ADDRESS, buf, 2, false);
+    i2c_write_blocking(i2c_default, BME280_ADDRESS, buf, 2, false);
 }
 
 // intermediate function that calculates the fine resolution temperature
@@ -505,6 +525,35 @@ int32_t bmp280_convert_pressure(int32_t pressure, int32_t temp, struct bmp280_ca
     return converted;
 }
 
+int32_t bmp280_convert_humidity(int32_t raw_humidity, int32_t temp, struct bmp280_calib_param* params)
+{
+	// uses stored calibration factors to convert raw pressure into %RH
+  	// Returns humidity in %rH as as double. Output value of 46.332 represents 46.332 %rH
+
+  	// Humidity offset calculations
+  	// this follows the "most accurate" version of code in BME280_MOD-1022.cpp
+  	double var_H;
+
+	int32_t t_fine = bmp280_convert(temp, params);
+
+  	var_H = (((double)t_fine) - 76800.0);
+  	var_H = (raw_humidity - (((int32_t)params->dig_h4) * 64.0 + ((int32_t)params->dig_h5) / 16384.0 * var_H)) *
+          (((int32_t)params->dig_h2) / 65536.0 * (1.0 + ((int32_t)params->dig_h6) / 67108864.0 * var_H *
+                                         (1.0 + ((int32_t)params->dig_h3) / 67108864.0 * var_H)));
+  
+  	var_H = var_H * (1.0 - ((int32_t)params->dig_h1) * var_H / 524288.0);
+  	if (var_H > 100.0) 
+	{
+    	var_H = 100.0;
+  	} 
+	else if (var_H < 0.0) 
+	{
+    	var_H = 0.0;
+  	}
+
+  return var_H;
+}
+
 void bmp280_get_calib_params(struct bmp280_calib_param* params) 
 {
     // raw temp and pressure values need to be calibrated according to
@@ -514,9 +563,9 @@ void bmp280_get_calib_params(struct bmp280_calib_param* params)
 
     uint8_t buf[NUM_CALIB_PARAMS] = { 0 };
     uint8_t reg = REG_DIG_T1_LSB;
-    i2c_write_blocking(i2c_default, BMP280_ADDRESS, &reg, 1, true);  // true to keep master control of bus
+    i2c_write_blocking(i2c_default, BME280_ADDRESS, &reg, 1, true);  // true to keep master control of bus
     // read in one go as register addresses auto-increment
-    i2c_read_blocking(i2c_default, BMP280_ADDRESS, buf, NUM_CALIB_PARAMS, false);  // false, we're done reading
+    i2c_read_blocking(i2c_default, BME280_ADDRESS, buf, NUM_CALIB_PARAMS, false);  // false, we're done reading
 
     // store these in a struct for later use
     params->dig_t1 = (uint16_t)(buf[1] << 8) | buf[0];
@@ -532,6 +581,40 @@ void bmp280_get_calib_params(struct bmp280_calib_param* params)
     params->dig_p7 = (int16_t)(buf[19] << 8) | buf[18];
     params->dig_p8 = (int16_t)(buf[21] << 8) | buf[20];
     params->dig_p9 = (int16_t)(buf[23] << 8) | buf[22];
+}
+
+void bmp280_get_calib_paramsHum(struct bmp280_calib_param* params) 
+{
+    // raw temp and pressure values need to be calibrated according to
+    // parameters generated during the manufacturing of the sensor
+    // there are 3 temperature params, and 9 pressure params, each with a LSB
+    // and MSB register, so we read from 24 registers
+
+    uint8_t buf[7] = { 0 };
+    uint8_t reg = 0xA1;
+    i2c_write_blocking(i2c_default, BME280_ADDRESS, &reg, 1, true);  // true to keep master control of bus
+    // read in one go as register addresses auto-increment
+    i2c_read_blocking(i2c_default, BME280_ADDRESS, buf, 1, false);  // false, we're done reading
+	params->dig_h1 = buf[0];
+
+	reg = 0xE1;
+	i2c_write_blocking(i2c_default, BME280_ADDRESS, &reg, 1, true);  // true to keep master control of bus
+    // read in one go as register addresses auto-increment
+    i2c_read_blocking(i2c_default, BME280_ADDRESS, buf, 7, false);  // false, we're done reading
+
+	// Convert the data (actually calibration coefficients)
+	// humidity coefficients
+	params->dig_h2 = buf[0] + (buf[1] * 256); // dig_H2 is int16_t
+	// coming from 0xE1 and 0xE2
+	params->dig_h3 = buf[2];  // dig_H3 is uint8_t
+	// coming from 0xE3
+	params->dig_h4 = buf[3] * 16 + (buf[4] && 0x0F); // dig_H4 is uint16_t
+	// bits [11:4] coming from 0xE4 and
+	// bits [3:0] coming from bits [3:0] of 0xE5
+	params->dig_h5 = buf[5] * 16 + (buf[4] && 0xF0) / 16; // dig_H5 is uint16_t
+	// bits [11:4] coming from 0xE6 and
+	// bits [3:0] coming from bits [7:4] of 0xE5
+	params->dig_h6 = buf[6];   // dig_H5 is int8_t
 }
 
 /*!
