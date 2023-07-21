@@ -118,6 +118,7 @@ struct bmp280_calib_param
 double t_fine = 0;
 
 // Overtake default setting
+
 #define PICO_I2C_SDA_PIN 0
 #define PICO_I2C_SCL_PIN 1
 
@@ -146,7 +147,7 @@ void Test11(ST7735_TFT); // "clock demo" , icons, , font 7
 void TestFPS(ST7735_TFT); // FPSturn on frame rate test if true
 void EndTests(ST7735_TFT);
 
-void bmp280_init();
+void bme280_init();
 void bmp280_read_raw(int32_t* temp, int32_t* pressure);
 void bmp280_reset();
 int32_t bmp280_convert(int32_t temp, struct bmp280_calib_param* params);
@@ -186,7 +187,7 @@ int main(void)
     gpio_pull_up(PICO_I2C_SCL_PIN);
 
     // configure BMP280
-    bmp280_init();
+    bme280_init();
 
     // retrieve fixed compensation params
     struct bmp280_calib_param params;
@@ -194,11 +195,12 @@ int main(void)
 
     int32_t raw_temperature;
     int32_t raw_pressure;
-	int32_t raw_humidity;
-	char strTemp[] = "Temperat.";
-	char strPres[] = "Pressure";
-	char strTempUnit[] = "dg. C";
-	char strPresUnit[] = "kPa";
+	char strTemp1[] = " Tempera-";
+	char strTemp2[] = "   ture";
+	char strPres1[] = "   Atm.";
+	char strPres2[] = " Pressure";
+	char strTempUnit[] = "  dg. C";
+	char strPresUnit[] = "   hPa";
 	char strTempValue[10];
 	char strPresValue[10];
 
@@ -211,8 +213,8 @@ int main(void)
 		printf("Pressure = %.3f kPa\n", pressure / 1000.f);
         printf("Temp. = %.2f C\n", temperature / 100.f);
 		
-		sprintf(strPresValue, "%.3f", pressure / 1000.f);
-        sprintf(strTempValue, "%.2f", temperature / 100.f);
+		sprintf(strPresValue, "%.1f", pressure / 100.f);
+        sprintf(strTempValue, "%.1f", temperature / 100.f);
 
 		uint16_t colorTemp;
 		if(temperature < 0)
@@ -242,17 +244,22 @@ int main(void)
 		myTFT1.TFTFontNum(myTFT1.TFTFont_Default);
 		myTFT2.TFTFontNum(myTFT2.TFTFont_Default);
 
-		myTFT1.TFTdrawText(5, 10, strTemp, ST7735_RED, ST7735_BLACK, 2);
-		myTFT2.TFTdrawText(5, 10, strPres, ST7735_CYAN, ST7735_BLACK, 2);
+		myTFT1.TFTdrawText(5, 10, strTemp1, ST7735_WHITE, ST7735_BLACK, 2);
+		myTFT1.TFTdrawText(5, 25, strTemp2, ST7735_WHITE, ST7735_BLACK, 2);
+		myTFT2.TFTdrawText(5, 10, strPres1, ST7735_WHITE, ST7735_BLACK, 2);
+		myTFT2.TFTdrawText(5, 25, strPres2, ST7735_WHITE, ST7735_BLACK, 2);
 
-		myTFT1.TFTdrawText(5, 35, strTempValue, colorTemp, ST7735_BLACK, 2);
-		myTFT2.TFTdrawText(5, 35, strPresValue, ST7735_CYAN, ST7735_BLACK, 2);
+		myTFT1.TFTFontNum(myTFT1.TFTFont_Wide);
+		myTFT2.TFTFontNum(myTFT2.TFTFont_Wide);
+		myTFT1.TFTdrawText(5, 55, strTempValue, colorTemp, ST7735_BLACK, 2);
+		myTFT2.TFTdrawText(5, 55, strPresValue, ST7735_YELLOW, ST7735_BLACK, 2);
 
-		//myTFT1.TFTFontNum(myTFT1.TFTFont_Wide);
-		//myTFT2.TFTFontNum(myTFT2.TFTFont_Wide);
+		myTFT1.TFTFontNum(myTFT1.TFTFont_Default);
+		myTFT2.TFTFontNum(myTFT2.TFTFont_Default);
 
-		myTFT1.TFTdrawText(5, 65, strTempUnit, ST7735_CYAN, ST7735_BLACK, 2);
-		myTFT2.TFTdrawText(5, 65, strPresUnit, ST7735_RED, ST7735_BLACK, 2);
+		// It's weird - ST7735_YELLOW and ST7735_CYAN are swapped ???
+		myTFT1.TFTdrawText(5, 80, strTempUnit, ST7735_YELLOW, ST7735_BLACK, 2);
+		myTFT2.TFTdrawText(5, 80, strPresUnit, ST7735_YELLOW, ST7735_BLACK, 2);
 		
 		TFT_MILLISEC_DELAY(TEST_DELAY1);
 		TFT_MILLISEC_DELAY(TEST_DELAY1);
@@ -414,7 +421,7 @@ void SetupTFT2(void)
 //**********************************************************
 }
 
-void bmp280_init() 
+void bme280_init() 
 {
     // use the "handheld device dynamic" optimal setting (see datasheet)
     uint8_t buf[2];

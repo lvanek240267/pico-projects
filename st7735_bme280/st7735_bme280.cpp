@@ -47,8 +47,8 @@ bool bTestFPS = true; /**< turn on frame rate per second test , set true for ON 
     board
     GPIO PICO_DEFAULT_I2C_SCK_PIN (on Pico this is GP5 (pin 7)) -> SCL on
     BMP280 board
-    3.3v (pin 36) -> VCC on BMP280 board
-    GND (pin 38)  -> GND on BMP280 board
+    3.3v (pin 36) -> VCC on BME280 board
+    GND (pin 38)  -> GND on BME280 board
  */
 
 // device has default bus address of 0x76
@@ -154,7 +154,7 @@ void Test11(ST7735_TFT); // "clock demo" , icons, , font 7
 void TestFPS(ST7735_TFT); // FPSturn on frame rate test if true
 void EndTests(ST7735_TFT);
 
-void bmp280_init();
+void bme280_init();
 void bmp280_read_raw(int32_t* temp, int32_t* pressure, int32_t* humidity);
 void bmp280_reset();
 int32_t bmp280_convert(int32_t temp, struct bmp280_calib_param* params);
@@ -162,7 +162,7 @@ int32_t bmp280_convert_temp(int32_t temp, struct bmp280_calib_param* params);
 int32_t bmp280_convert_pressure(int32_t pressure, int32_t temp, struct bmp280_calib_param* params);
 int32_t bmp280_convert_humidity(int32_t raw_humidity, int32_t temp, struct bmp280_calib_param* params);
 void bmp280_get_calib_params(struct bmp280_calib_param* params);
-void bmp280_get_calib_paramsHum(struct bmp280_calib_param* params);
+void bme280_get_calib_paramsHum(struct bmp280_calib_param* params);
 
 
 //  Section ::  MAIN loop
@@ -194,13 +194,13 @@ int main(void)
     gpio_pull_up(PICO_I2C_SDA_PIN);
     gpio_pull_up(PICO_I2C_SCL_PIN);
 
-    // configure BMP280
-    bmp280_init();
+    // configure BME280
+    bme280_init();
 
     // retrieve fixed compensation params
     struct bmp280_calib_param params;
     bmp280_get_calib_params(&params);
-	//bmp280_get_calib_paramsHum(&params);
+	bme280_get_calib_paramsHum(&params);
 
     int32_t raw_temperature;
     int32_t raw_pressure;
@@ -220,15 +220,15 @@ int main(void)
         bmp280_read_raw(&raw_temperature, &raw_pressure, &raw_humidity);
         int32_t temperature = bmp280_convert_temp(raw_temperature, &params);
         int32_t pressure = bmp280_convert_pressure(raw_pressure, raw_temperature, &params);
-		//int32_t humidity = bmp280_convert_humidity(raw_humidity, raw_temperature, &params);
+		int32_t humidity = bmp280_convert_humidity(raw_humidity, raw_temperature, &params);
         
 		printf("Pressure = %.3f kPa\n", pressure / 1000.f);
         printf("Temp. = %.2f C\n", temperature / 100.f);
-		//printf("Humidity = %.1f %\n", humidity / 100.f);
+		printf("Humidity = %.1f %\n", humidity / 100.f);
 		
 		sprintf(strPresValue, "%.3f", pressure / 1000.f);
         sprintf(strTempValue, "%.2f", temperature / 100.f);
-		//sprintf(strTempValue, "%.1f", humidity / 100.f);
+		sprintf(strTempValue, "%.1f", humidity / 100.f);
 
 		uint16_t colorTemp;
 		if(temperature < 0)
@@ -259,18 +259,15 @@ int main(void)
 		myTFT2.TFTFontNum(myTFT2.TFTFont_Default);
 
 		myTFT1.TFTdrawText(5, 10, strTemp, ST7735_RED, ST7735_BLACK, 2);
-		//myTFT1.TFTdrawText(85, 10, strHum, ST7735_BLUE, ST7735_BLACK, 2);
+		myTFT1.TFTdrawText(85, 10, strHum, ST7735_BLUE, ST7735_BLACK, 2);
 		myTFT2.TFTdrawText(5, 10, strPres, ST7735_CYAN, ST7735_BLACK, 2);
 
 		myTFT1.TFTdrawText(5, 35, strTempValue, colorTemp, ST7735_BLACK, 2);
-		//myTFT1.TFTdrawText(5, 115, strHumValue, ST7735_BLUE, ST7735_BLACK, 2);
+		myTFT1.TFTdrawText(5, 115, strHumValue, ST7735_BLUE, ST7735_BLACK, 2);
 		myTFT2.TFTdrawText(5, 35, strPresValue, ST7735_CYAN, ST7735_BLACK, 2);
 
-		myTFT1.TFTFontNum(myTFT1.TFTFont_Wide);
-		myTFT2.TFTFontNum(myTFT2.TFTFont_Wide);
-
 		myTFT1.TFTdrawText(5, 65, strTempUnit, ST7735_CYAN, ST7735_BLACK, 2);
-		//myTFT1.TFTdrawText(5, 145, strHumUnit, ST7735_BLUE, ST7735_BLACK, 2);
+		myTFT1.TFTdrawText(5, 145, strHumUnit, ST7735_BLUE, ST7735_BLACK, 2);
 		myTFT2.TFTdrawText(5, 65, strPresUnit, ST7735_RED, ST7735_BLACK, 2);
 		
 		TFT_MILLISEC_DELAY(TEST_DELAY1);
@@ -433,7 +430,7 @@ void SetupTFT2(void)
 //**********************************************************
 }
 
-void bmp280_init() 
+void bme280_init() 
 {
     // use the "handheld device dynamic" optimal setting (see datasheet)
     uint8_t buf[2];
@@ -583,7 +580,7 @@ void bmp280_get_calib_params(struct bmp280_calib_param* params)
     params->dig_p9 = (int16_t)(buf[23] << 8) | buf[22];
 }
 
-void bmp280_get_calib_paramsHum(struct bmp280_calib_param* params) 
+void bme280_get_calib_paramsHum(struct bmp280_calib_param* params) 
 {
     // raw temp and pressure values need to be calibrated according to
     // parameters generated during the manufacturing of the sensor

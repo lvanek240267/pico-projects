@@ -3,8 +3,7 @@
 == Description
 [[description]]
 
-Reading data from BMP280 I2C sensor.
-Using two 1.8" 128x160 TFT displays with controller ST7735, SPI to display.
+Testing ST7735_TFT with BMP280 temperature and pressure sensor.
 
 Original ST7735 repository: https://github.com/gavinlyonsrepo/ST7735_TFT_PICO
 
@@ -27,6 +26,10 @@ image::wiring.png[]
 * GP4 -> RS
 * GP11 (SPI1 TX) -> MOSI
 * GP10 (SPI1 SCK) -> CLK
+* =========================
+* BMP280
+* SDA -> GP0
+* SCL -> GP1
 
 == Practical realization
 [[ssd1306_i2c_image]]
