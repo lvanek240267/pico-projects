@@ -1,4 +1,4 @@
-= ST7735 TFT displays, BMP280 sensor and Raspberry PI Pico
+= ST7735 TFT displays, BME280 sensor and Raspberry PI Pico
 
 == Description
 [[description]]
