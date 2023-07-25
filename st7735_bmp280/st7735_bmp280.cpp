@@ -211,7 +211,7 @@ int main(void)
         int32_t pressure = bmp280_convert_pressure(raw_pressure, raw_temperature, &params);
 	    
 		double dPressure = pressure / 100.f;
-		dPressure *= 1.08;
+		dPressure *= 1.03877; // This correction I have calculated from profesional meteo station near me. BMP280 reading is underestimated...
 
 		printf("Pressure = %.3f kPa\n", dPressure);
         printf("Temp. = %.2f C\n", temperature / 100.f);

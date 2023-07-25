@@ -1244,8 +1244,8 @@ Disassembly of section .text:
 10000aec:	0000ffff 	.word	0x0000ffff
 10000af0:	0000ffe0 	.word	0x0000ffe0
 10000af4:	42c80000 	.word	0x42c80000
-10000af8:	147ae148 	.word	0x147ae148
-10000afc:	3ff147ae 	.word	0x3ff147ae
+10000af8:	4aa10e02 	.word	0x4aa10e02
+10000afc:	3ff09ecd 	.word	0x3ff09ecd
 10000b00:	1000fd2c 	.word	0x1000fd2c
 10000b04:	1000fd44 	.word	0x1000fd44
 10000b08:	1000fd54 	.word	0x1000fd54
