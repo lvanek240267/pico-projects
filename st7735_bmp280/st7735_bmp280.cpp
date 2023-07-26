@@ -149,9 +149,9 @@ void EndTests(ST7735_TFT);
 
 void bme280_init();
 void bmp280_read_raw(int32_t* temp, int32_t* pressure);
-void bmp280_reset();
-int32_t bmp280_convert(int32_t temp, struct bmp280_calib_param* params);
-int32_t bmp280_convert_temp(int32_t temp, struct bmp280_calib_param* params);
+void bme280_reset();
+int32_t bme280_convert(int32_t temp, struct bmp280_calib_param* params);
+int32_t bme280_convert_temp(int32_t temp, struct bmp280_calib_param* params);
 int32_t bmp280_convert_pressure(int32_t pressure, int32_t temp, struct bmp280_calib_param* params);
 void bmp280_get_calib_params(struct bmp280_calib_param* params);
 
@@ -207,7 +207,7 @@ int main(void)
 	while (true) 
 	{
         bmp280_read_raw(&raw_temperature, &raw_pressure);
-        int32_t temperature = bmp280_convert_temp(raw_temperature, &params);
+        int32_t temperature = bme280_convert_temp(raw_temperature, &params);
         int32_t pressure = bmp280_convert_pressure(raw_pressure, raw_temperature, &params);
 	    
 		double dPressure = pressure / 100.f;
@@ -217,7 +217,7 @@ int main(void)
         printf("Temp. = %.2f C\n", temperature / 100.f);
 		
 		sprintf(strPresValue, "%.1f", dPressure);
-        sprintf(strTempValue, "%.1f", temperature / 100.f);
+        sprintf(strTempValue, " %.1f", temperature / 100.f);
 
 		uint16_t colorTemp;
 		if(temperature < 0)
@@ -460,7 +460,7 @@ void bmp280_read_raw(int32_t* temp, int32_t* pressure)
     *temp = (buf[3] << 12) | (buf[4] << 4) | (buf[5] >> 4);
 }
 
-void bmp280_reset() 
+void bme280_reset() 
 {
     // reset the device with the power-on-reset procedure
     uint8_t buf[2] = { REG_RESET, 0xB6 };
@@ -469,7 +469,7 @@ void bmp280_reset()
 
 // intermediate function that calculates the fine resolution temperature
 // used for both pressure and temperature conversions
-int32_t bmp280_convert(int32_t temp, struct bmp280_calib_param* params) 
+int32_t bme280_convert(int32_t temp, struct bmp280_calib_param* params) 
 {
     // use the 32-bit fixed point compensation implementation given in the
     // datasheet
@@ -480,9 +480,9 @@ int32_t bmp280_convert(int32_t temp, struct bmp280_calib_param* params)
     return var1 + var2;
 }
 
-int32_t bmp280_convert_temp(int32_t temp, struct bmp280_calib_param* params) {
+int32_t bme280_convert_temp(int32_t temp, struct bmp280_calib_param* params) {
     // uses the BMP280 calibration parameters to compensate the temperature value read from its registers
-    int32_t t_fine = bmp280_convert(temp, params);
+    int32_t t_fine = bme280_convert(temp, params);
     return (t_fine * 5 + 128) >> 8;
 }
 
@@ -490,7 +490,7 @@ int32_t bmp280_convert_pressure(int32_t pressure, int32_t temp, struct bmp280_ca
 {
     // uses the BMP280 calibration parameters to compensate the pressure value read from its registers
 
-    int32_t t_fine = bmp280_convert(temp, params);
+    int32_t t_fine = bme280_convert(temp, params);
 
     int32_t var1, var2;
     uint32_t converted = 0.0;

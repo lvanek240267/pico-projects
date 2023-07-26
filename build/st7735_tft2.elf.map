@@ -1346,9 +1346,9 @@ Discarded input sections
  .comment       0x00000000       0x4a st7735_tft2/CMakeFiles/st7735_tft2.dir/st7735/ST7735_TFT_Bitmap_Data.cpp.obj
  .ARM.attributes
                 0x00000000       0x2c st7735_tft2/CMakeFiles/st7735_tft2.dir/st7735/ST7735_TFT_Bitmap_Data.cpp.obj
- .text          0x00000000        0x0 C:\Users\lvanek\AppData\Local\Temp\ccSjj5Us.o
- .data          0x00000000        0x0 C:\Users\lvanek\AppData\Local\Temp\ccSjj5Us.o
- .bss           0x00000000        0x0 C:\Users\lvanek\AppData\Local\Temp\ccSjj5Us.o
+ .text          0x00000000        0x0 C:\Users\lvanek\AppData\Local\Temp\cckt0pmp.o
+ .data          0x00000000        0x0 C:\Users\lvanek\AppData\Local\Temp\cckt0pmp.o
+ .bss           0x00000000        0x0 C:\Users\lvanek\AppData\Local\Temp\cckt0pmp.o
  .text          0x00000000        0x0 c:/picosdk/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libstdc++.a(pure.o)
  .data          0x00000000        0x0 c:/picosdk/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libstdc++.a(pure.o)
  .bss           0x00000000        0x0 c:/picosdk/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libstdc++.a(pure.o)
@@ -1891,7 +1891,7 @@ LOAD c:/picosdk/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../.
 .boot2          0x10000000      0x100
                 0x10000000                __boot2_start__ = .
  *(.boot2)
- .boot2         0x10000000      0x100 C:\Users\lvanek\AppData\Local\Temp\ccSjj5Us.o
+ .boot2         0x10000000      0x100 C:\Users\lvanek\AppData\Local\Temp\cckt0pmp.o
                 0x10000100                __boot2_end__ = .
                 0x00000001                ASSERT (((__boot2_end__ - __boot2_start__) == 0x100), ERROR: Pico second stage bootloader must be 256 bytes in size)
 
@@ -1965,12 +1965,12 @@ LOAD c:/picosdk/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../.
                 0x10000358       0xac st7735_tft2/CMakeFiles/st7735_tft2.dir/st7735_tft2.cpp.obj
                 0x10000358                ST7735_TFT::ST7735_TFT(ST7735_TFT const&)
                 0x10000358                ST7735_TFT::ST7735_TFT(ST7735_TFT const&)
- .text._Z6Setup1v
+ .text._Z9SetupTFT1v
                 0x10000404       0x54 st7735_tft2/CMakeFiles/st7735_tft2.dir/st7735_tft2.cpp.obj
-                0x10000404                Setup1()
- .text._Z6Setup2v
+                0x10000404                SetupTFT1()
+ .text._Z9SetupTFT2v
                 0x10000458       0x54 st7735_tft2/CMakeFiles/st7735_tft2.dir/st7735_tft2.cpp.obj
-                0x10000458                Setup2()
+                0x10000458                SetupTFT2()
  .text._Z5Test110ST7735_TFT
                 0x100004ac      0x168 st7735_tft2/CMakeFiles/st7735_tft2.dir/st7735_tft2.cpp.obj
                 0x100004ac                Test1(ST7735_TFT)
@@ -3849,7 +3849,7 @@ LOAD st7735_tft2/CMakeFiles/st7735_tft2.dir/st7735/ST7735_TFT_graphics.cpp.obj
 LOAD st7735_tft2/CMakeFiles/st7735_tft2.dir/st7735/ST7735_TFT_Print.cpp.obj
 LOAD st7735_tft2/CMakeFiles/st7735_tft2.dir/st7735/ST7735_TFT_Font.cpp.obj
 LOAD st7735_tft2/CMakeFiles/st7735_tft2.dir/st7735/ST7735_TFT_Bitmap_Data.cpp.obj
-LOAD C:\Users\lvanek\AppData\Local\Temp\ccSjj5Us.o
+LOAD C:\Users\lvanek\AppData\Local\Temp\cckt0pmp.o
 LOAD c:/picosdk/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libstdc++.a
 LOAD c:/picosdk/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libm.a
 START GROUP
@@ -3952,7 +3952,7 @@ LOAD linker stubs
  .ARM.attributes
                 0x0000066e       0x2c st7735_tft2/CMakeFiles/st7735_tft2.dir/st7735/ST7735_TFT_Font.cpp.obj
  .ARM.attributes
-                0x0000069a       0x22 C:\Users\lvanek\AppData\Local\Temp\ccSjj5Us.o
+                0x0000069a       0x22 C:\Users\lvanek\AppData\Local\Temp\cckt0pmp.o
  .ARM.attributes
                 0x000006bc       0x2c c:/picosdk/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libstdc++.a(pure.o)
  .ARM.attributes
@@ -4374,82 +4374,82 @@ LOAD linker stubs
  .debug_line    0x000131d7      0xb24 st7735_tft2/CMakeFiles/st7735_tft2.dir/st7735/ST7735_TFT_Print.cpp.obj
  .debug_line    0x00013cfb      0x19f st7735_tft2/CMakeFiles/st7735_tft2.dir/st7735/ST7735_TFT_Font.cpp.obj
 
-.debug_str      0x00000000    0x11862
- .debug_str     0x00000000     0x87b5 st7735_tft2/CMakeFiles/st7735_tft2.dir/st7735_tft2.cpp.obj
-                               0x8c54 (size before relaxing)
- .debug_str     0x000087b5      0x80e st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+.debug_str      0x00000000    0x1186e
+ .debug_str     0x00000000     0x87c1 st7735_tft2/CMakeFiles/st7735_tft2.dir/st7735_tft2.cpp.obj
+                               0x8c60 (size before relaxing)
+ .debug_str     0x000087c1      0x80e st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
                                 0x9ab (size before relaxing)
- .debug_str     0x00008fc3       0x75 st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
+ .debug_str     0x00008fcf       0x75 st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
                                 0x233 (size before relaxing)
- .debug_str     0x00009038      0x1b5 st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+ .debug_str     0x00009044      0x1b5 st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
                                 0x377 (size before relaxing)
- .debug_str     0x000091ed       0xe5 st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+ .debug_str     0x000091f9       0xe5 st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
                                 0x35e (size before relaxing)
- .debug_str     0x000092d2      0x3c3 st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+ .debug_str     0x000092de      0x3c3 st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
                                 0x7dc (size before relaxing)
- .debug_str     0x00009695       0x55 st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/common/pico_sync/lock_core.c.obj
+ .debug_str     0x000096a1       0x55 st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/common/pico_sync/lock_core.c.obj
                                 0x214 (size before relaxing)
- .debug_str     0x000096ea      0x1d9 st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/common/pico_sync/mutex.c.obj
+ .debug_str     0x000096f6      0x1d9 st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/common/pico_sync/mutex.c.obj
                                 0x606 (size before relaxing)
- .debug_str     0x000098c3      0x6ff st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/common/pico_time/time.c.obj
+ .debug_str     0x000098cf      0x6ff st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/common/pico_time/time.c.obj
                                 0xc68 (size before relaxing)
- .debug_str     0x00009fc2      0x137 st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+ .debug_str     0x00009fce      0x137 st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
                                 0x730 (size before relaxing)
- .debug_str     0x0000a0f9       0xdf st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/common/pico_util/pheap.c.obj
+ .debug_str     0x0000a105       0xdf st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/common/pico_util/pheap.c.obj
                                 0x3fd (size before relaxing)
- .debug_str     0x0000a1d8      0x2d8 st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+ .debug_str     0x0000a1e4      0x2d8 st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
                                 0x6a4 (size before relaxing)
- .debug_str     0x0000a4b0       0xc4 st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
+ .debug_str     0x0000a4bc       0xc4 st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
                                 0x2ee (size before relaxing)
- .debug_str     0x0000a574      0x11f st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+ .debug_str     0x0000a580      0x11f st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
                                 0x335 (size before relaxing)
- .debug_str     0x0000a693       0x64 st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
+ .debug_str     0x0000a69f       0x64 st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
                                 0x232 (size before relaxing)
- .debug_str     0x0000a6f7      0x289 st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+ .debug_str     0x0000a703      0x289 st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
                                 0x7e2 (size before relaxing)
- .debug_str     0x0000a980      0x23a st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+ .debug_str     0x0000a98c      0x23a st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
                                 0x493 (size before relaxing)
- .debug_str     0x0000abba       0x4e st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+ .debug_str     0x0000abc6       0x4e st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
                                  0x84 (size before relaxing)
- .debug_str     0x0000ac08       0xbd st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+ .debug_str     0x0000ac14       0xbd st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
                                 0x26d (size before relaxing)
- .debug_str     0x0000acc5       0x3a st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+ .debug_str     0x0000acd1       0x3a st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
                                  0x7e (size before relaxing)
- .debug_str     0x0000acff       0x3e st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+ .debug_str     0x0000ad0b       0x3e st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
                                  0x82 (size before relaxing)
- .debug_str     0x0000ad3d       0x96 st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+ .debug_str     0x0000ad49       0x96 st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
                                 0x2ac (size before relaxing)
- .debug_str     0x0000add3       0x44 st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+ .debug_str     0x0000addf       0x44 st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
                                  0x88 (size before relaxing)
- .debug_str     0x0000ae17       0x49 st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
+ .debug_str     0x0000ae23       0x49 st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
                                  0x8d (size before relaxing)
- .debug_str     0x0000ae60       0x3c st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
+ .debug_str     0x0000ae6c       0x3c st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
                                  0x80 (size before relaxing)
- .debug_str     0x0000ae9c       0x7a st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
+ .debug_str     0x0000aea8       0x7a st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
                                 0x2c8 (size before relaxing)
- .debug_str     0x0000af16       0x42 st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
+ .debug_str     0x0000af22       0x42 st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
                                  0x86 (size before relaxing)
- .debug_str     0x0000af58       0xb7 st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
+ .debug_str     0x0000af64       0xb7 st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
                                 0x241 (size before relaxing)
- .debug_str     0x0000b00f       0x40 st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+ .debug_str     0x0000b01b       0x40 st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
                                  0x84 (size before relaxing)
- .debug_str     0x0000b04f       0x3d st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
+ .debug_str     0x0000b05b       0x3d st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
                                  0x81 (size before relaxing)
- .debug_str     0x0000b08c       0xaf st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj
+ .debug_str     0x0000b098       0xaf st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj
                                 0x39f (size before relaxing)
- .debug_str     0x0000b13b      0x232 st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+ .debug_str     0x0000b147      0x232 st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
                                 0x3f5 (size before relaxing)
- .debug_str     0x0000b36d      0x4ad st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+ .debug_str     0x0000b379      0x4ad st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
                                 0x9aa (size before relaxing)
- .debug_str     0x0000b81a      0x213 st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj
+ .debug_str     0x0000b826      0x213 st7735_tft2/CMakeFiles/st7735_tft2.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj
                                 0x5a4 (size before relaxing)
- .debug_str     0x0000ba2d      0x295 st7735_tft2/CMakeFiles/st7735_tft2.dir/st7735/ST7735_TFT.cpp.obj
+ .debug_str     0x0000ba39      0x295 st7735_tft2/CMakeFiles/st7735_tft2.dir/st7735/ST7735_TFT.cpp.obj
                                0x27ea (size before relaxing)
- .debug_str     0x0000bcc2      0x5e0 st7735_tft2/CMakeFiles/st7735_tft2.dir/st7735/ST7735_TFT_graphics.cpp.obj
+ .debug_str     0x0000bcce      0x5e0 st7735_tft2/CMakeFiles/st7735_tft2.dir/st7735/ST7735_TFT_graphics.cpp.obj
                                0x2c1d (size before relaxing)
- .debug_str     0x0000c2a2     0x5519 st7735_tft2/CMakeFiles/st7735_tft2.dir/st7735/ST7735_TFT_Print.cpp.obj
+ .debug_str     0x0000c2ae     0x5519 st7735_tft2/CMakeFiles/st7735_tft2.dir/st7735/ST7735_TFT_Print.cpp.obj
                                0x7802 (size before relaxing)
- .debug_str     0x000117bb       0xa7 st7735_tft2/CMakeFiles/st7735_tft2.dir/st7735/ST7735_TFT_Font.cpp.obj
+ .debug_str     0x000117c7       0xa7 st7735_tft2/CMakeFiles/st7735_tft2.dir/st7735/ST7735_TFT_Font.cpp.obj
                                 0x2fa (size before relaxing)
 
 .debug_frame    0x00000000     0x43b4

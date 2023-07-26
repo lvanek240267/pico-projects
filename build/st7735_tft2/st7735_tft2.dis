@@ -47,9 +47,9 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  21 .debug_line   00013e9a  00000000  00000000  00075340  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 22 .debug_str    00011862  00000000  00000000  000891da  2**0
+ 22 .debug_str    0001186e  00000000  00000000  000891da  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 23 .debug_frame  000043b4  00000000  00000000  0009aa3c  2**2
+ 23 .debug_frame  000043b4  00000000  00000000  0009aa48  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 D:/Home/Development/Personal/PICO/pico-projects/build/st7735_tft2/st7735_tft2.elf:     file format elf32-littlearm
@@ -456,15 +456,15 @@ Disassembly of section .text:
 100003fc:	10013804 	.word	0x10013804
 10000400:	100128ec 	.word	0x100128ec
 
-10000404 <_Z6Setup1v>:
+10000404 <_Z9SetupTFT1v>:
 10000404:	b510      	push	{r4, lr}
 10000406:	b082      	sub	sp, #8
 10000408:	20fa      	movs	r0, #250	; 0xfa
 1000040a:	0080      	lsls	r0, r0, #2
 1000040c:	f003 fd48 	bl	10003ea0 <busy_wait_ms>
 10000410:	21fa      	movs	r1, #250	; 0xfa
-10000412:	4c0f      	ldr	r4, [pc, #60]	; (10000450 <_Z6Setup1v+0x4c>)
-10000414:	4a0f      	ldr	r2, [pc, #60]	; (10000454 <_Z6Setup1v+0x50>)
+10000412:	4c0f      	ldr	r4, [pc, #60]	; (10000450 <_Z9SetupTFT1v+0x4c>)
+10000414:	4a0f      	ldr	r2, [pc, #60]	; (10000454 <_Z9SetupTFT1v+0x50>)
 10000416:	0149      	lsls	r1, r1, #5
 10000418:	0020      	movs	r0, r4
 1000041a:	f007 fa43 	bl	100078a4 <_ZN10ST7735_TFT14TFTInitSPITypeEmP8spi_inst>
@@ -493,15 +493,15 @@ Disassembly of section .text:
 10000450:	20001cf0 	.word	0x20001cf0
 10000454:	4003c000 	.word	0x4003c000
 
-10000458 <_Z6Setup2v>:
+10000458 <_Z9SetupTFT2v>:
 10000458:	b510      	push	{r4, lr}
 1000045a:	b082      	sub	sp, #8
 1000045c:	20fa      	movs	r0, #250	; 0xfa
 1000045e:	0080      	lsls	r0, r0, #2
 10000460:	f003 fd1e 	bl	10003ea0 <busy_wait_ms>
 10000464:	21fa      	movs	r1, #250	; 0xfa
-10000466:	4c0f      	ldr	r4, [pc, #60]	; (100004a4 <_Z6Setup2v+0x4c>)
-10000468:	4a0f      	ldr	r2, [pc, #60]	; (100004a8 <_Z6Setup2v+0x50>)
+10000466:	4c0f      	ldr	r4, [pc, #60]	; (100004a4 <_Z9SetupTFT2v+0x4c>)
+10000468:	4a0f      	ldr	r2, [pc, #60]	; (100004a8 <_Z9SetupTFT2v+0x50>)
 1000046a:	0149      	lsls	r1, r1, #5
 1000046c:	0020      	movs	r0, r4
 1000046e:	f007 fa19 	bl	100078a4 <_ZN10ST7735_TFT14TFTInitSPITypeEmP8spi_inst>
@@ -2362,8 +2362,8 @@ Disassembly of section .text:
 10001504:	4645      	mov	r5, r8
 10001506:	b5e0      	push	{r5, r6, r7, lr}
 10001508:	b091      	sub	sp, #68	; 0x44
-1000150a:	f7fe ff7b 	bl	10000404 <_Z6Setup1v>
-1000150e:	f7fe ffa3 	bl	10000458 <_Z6Setup2v>
+1000150a:	f7fe ff7b 	bl	10000404 <_Z9SetupTFT1v>
+1000150e:	f7fe ffa3 	bl	10000458 <_Z9SetupTFT2v>
 10001512:	2300      	movs	r3, #0
 10001514:	9300      	str	r3, [sp, #0]
 10001516:	e060      	b.n	100015da <main+0xde>
