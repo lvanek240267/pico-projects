@@ -237,7 +237,7 @@ int main(void)
 		sprintf(strPresValue, "%.1f", dPressure);
         sprintf(strTempValue, " %.1f", temperature / 100.f);
 		sprintf(strHumValue, " %.1f", humidity / 100.f);
-		sprintf(strRawHumValue, "%.2f", raw_humidity);
+		sprintf(strRawHumValue, "%.4f", raw_humidity);
 
 		uint16_t colorTemp;
 		if(temperature < 0)
@@ -269,26 +269,27 @@ int main(void)
 
 		myTFT1.TFTdrawText(5, 10, strTemp1, ST7735_WHITE, ST7735_BLACK, 2);
 		myTFT1.TFTdrawText(5, 25, strTemp2, ST7735_WHITE, ST7735_BLACK, 2);
-		myTFT1.TFTdrawText(5, 90, strHum, ST7735_WHITE, ST7735_BLACK, 2);
+		myTFT1.TFTdrawText(5, 91, strHum, ST7735_WHITE, ST7735_BLACK, 2);
 		myTFT2.TFTdrawText(5, 10, strPres1, ST7735_WHITE, ST7735_BLACK, 2);
 		myTFT2.TFTdrawText(5, 25, strPres2, ST7735_WHITE, ST7735_BLACK, 2);
 
 		myTFT1.TFTFontNum(myTFT1.TFTFont_Wide);
 		myTFT2.TFTFontNum(myTFT2.TFTFont_Wide);
 		myTFT1.TFTdrawText(5, 50, strTempValue, colorTemp, ST7735_BLACK, 2);
-		myTFT1.TFTdrawText(5, 115, strHumValue, ST7735_BLUE, ST7735_BLACK, 2);
-		myTFT2.TFTdrawText(5, 115, strRawHumValue, ST7735_BLUE, ST7735_BLACK, 2);
-		myTFT2.TFTdrawText(5, 50, strPresValue, ST7735_YELLOW, ST7735_BLACK, 2);
+		myTFT1.TFTdrawText(5, 115, strHumValue, ST7735_GREEN, ST7735_BLACK, 2);
+		myTFT2.TFTdrawText(5, 115, strRawHumValue, ST7735_GREEN, ST7735_BLACK, 2);
+		myTFT2.TFTdrawText(5, 50, strPresValue, ST7735_CYAN, ST7735_BLACK, 2);
 
 		myTFT1.TFTFontNum(myTFT1.TFTFont_Default);
 		myTFT2.TFTFontNum(myTFT2.TFTFont_Default);
 		
 		// It's weird - ST7735_YELLOW and ST7735_CYAN are swapped ???
-		myTFT1.TFTdrawText(5, 72, strTempUnit, ST7735_YELLOW, ST7735_BLACK, 2);
-		myTFT1.TFTdrawText(5, 138, strHumUnit, ST7735_BLUE, ST7735_BLACK, 2);
-		myTFT2.TFTdrawText(5, 72, strPresUnit, ST7735_RED, ST7735_BLACK, 2);
-		
-		
+		myTFT1.TFTdrawText(5, 72, strTempUnit, colorTemp, ST7735_BLACK, 2);
+		myTFT1.TFTdrawText(5, 138, strHumUnit, ST7735_GREEN, ST7735_BLACK, 2);
+		myTFT2.TFTdrawText(5, 72, strPresUnit, ST7735_CYAN, ST7735_BLACK, 2);
+
+		myTFT1.TFTdrawFastHLine(0, 88, 128, ST7735_YELLOW);
+		myTFT2.TFTdrawFastHLine(0, 88, 128, ST7735_YELLOW);
 
 		TFT_MILLISEC_DELAY(TEST_DELAY1);
 		TFT_MILLISEC_DELAY(TEST_DELAY1);
