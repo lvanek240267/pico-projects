@@ -481,7 +481,7 @@ void bme280_init()
 void bme280_read_raw(int32_t* temp, int32_t* pressure, int32_t* humidity) 
 {
     // BMP280 data registers are auto-incrementing and we have 3 temperature and
-    // pressure registers each, so we start at 0xF7 and read 6 bytes to 0xFC
+    // pressure registers each, so we start at 0xF7 and read 8 bytes to 0xFE
     // note: normal mode does not require further ctrl_meas and config register writes
 
     uint8_t buf[8];
