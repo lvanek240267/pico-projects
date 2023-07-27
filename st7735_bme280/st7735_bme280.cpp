@@ -246,7 +246,7 @@ int main(void)
 		}
 		else if(temperature < 10)
 		{
-			colorTemp = ST7735_GREEN;
+			colorTemp = ST7735_BLUE;
 		}
 		else if(temperature < 20)
 		{
@@ -283,7 +283,6 @@ int main(void)
 		myTFT1.TFTFontNum(myTFT1.TFTFont_Default);
 		myTFT2.TFTFontNum(myTFT2.TFTFont_Default);
 		
-		// It's weird - ST7735_YELLOW and ST7735_CYAN are swapped ???
 		myTFT1.TFTdrawText(5, 72, strTempUnit, colorTemp, ST7735_BLACK, 2);
 		myTFT1.TFTdrawText(5, 138, strHumUnit, ST7735_GREEN, ST7735_BLACK, 2);
 		myTFT2.TFTdrawText(5, 72, strPresUnit, ST7735_CYAN, ST7735_BLACK, 2);
