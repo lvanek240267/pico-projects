@@ -52,7 +52,7 @@ bool bTestFPS = true; /**< turn on frame rate per second test , set true for ON 
  */
 
 // device has default bus address of 0x76
-#define BMP280_ADDRESS _u(0x76) // If you leave SDO unconnected, it will be connected to 3.3V (address 0x77)
+#define BMP280_ADDRESS _u(0x77) // If you leave SDO unconnected, it will be connected to 3.3V (address 0x77)
 
 // hardware registers
 #define REG_CONFIG _u(0xF5)

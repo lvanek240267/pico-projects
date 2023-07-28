@@ -213,7 +213,7 @@ int main(void)
 	char strPres2[] = " Pressure";
 	char strHum[] = " Humidity";
 	char strTempUnit[] = "  dg. C";
-	char strPresUnit[] = "  hPa";
+	char strPresUnit[] = "   hPa";
 	char strHumUnit[] = " Percent";
 	char strTempValue[10];
 	char strPresValue[10];
