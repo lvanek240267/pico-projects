@@ -10,7 +10,8 @@ Original ST7735 repository: https://github.com/gavinlyonsrepo/ST7735_TFT_PICO
 == Wiring information
 [[ssd1306_i2c_wiring]]
 [pdfwidth=75%]
-.Wiring Diagram for Raspberry Pi Pico and ST7735 TFT display. Only 1st display is painted. So:
+.Wiring Diagram for Raspberry Pi Pico and ST7735 TFT display. Only 1st display is painted. I have moved 
+BMP280 ping to GP12 and GP13, so GP0 ang GP1 is now used for debugging:
 image::wiring.png[]
 
 * First display:
@@ -28,8 +29,8 @@ image::wiring.png[]
 * GP10 (SPI1 SCK) -> CLK
 * =========================
 * BMP280
-* SDA -> GP0
-* SCL -> GP1
+* SDA -> GP12
+* SCL -> GP13
 
 == Practical realization
 [[ssd1306_i2c_image]]

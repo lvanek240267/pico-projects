@@ -1,0 +1,18 @@
+I'm still not able to read humidity from BME280 sensor. I had a discussion vith chatGPT about this. Is anybody smarter than AI and tell me if it fake or original ? Or something is wrong in my code ? https://github.com/lvanek240267/pico-projects/tree/main/st7735_bme280
+
+
+Hi, can you gues if BME280 sensor in this ptoto is Bosh origial or fake. Thanks. https://raw.githubusercontent.com/lvanek240267/pico-projects/main/st7735_bme280/BME280.jpg
+
+
+As an AI, I cannot visually analyze images. However, there are a few general ways to identify if a BME280 sensor is genuine or fake:
+
+Packaging and labeling: Genuine Bosch BME280 sensors usually come in high-quality packaging with clear labeling, including the Bosch logo and product information. Fake sensors may have poorly designed packaging or misspellings on the label.
+
+Quality of construction: Genuine BME280 sensors tend to have well-built construction with precise soldering and clean wiring. Fake sensors may have visible defects, such as messy soldering or loose components.
+
+Price and source: If you purchased the sensor from a reputable supplier or authorized distributor, the chances of it being genuine are higher. However, if the price was significantly lower than the market average or if you bought it from an unknown source, there is a possibility that it might be a counterfeit.
+
+To be absolutely certain about the authenticity of the BME280 sensor, it is recommended to buy from trusted suppliers or contact Bosch directly for further verification.
+
+
+ 
