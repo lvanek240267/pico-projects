@@ -28,8 +28,8 @@ image::wiring.png[]
 * GP10 (SPI1 SCK) -> CLK
 * =========================
 * BMP280
-* SDA -> GP12
-* SCL -> GP13
+* SDA -> GP0
+* SCL -> GP1
 
 == Practical realization
 [[ssd1306_i2c_image]]
