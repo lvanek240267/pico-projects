@@ -127,8 +127,8 @@ struct bmp280_calib_param
 double t_fine = 0;
 
 // Overtake default setting
-#define PICO_I2C_SDA_PIN 0
-#define PICO_I2C_SCL_PIN 1
+#define PICO_I2C_SDA_PIN 12
+#define PICO_I2C_SCL_PIN 13
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
