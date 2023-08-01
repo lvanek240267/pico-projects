@@ -58,7 +58,7 @@ bool bTestFPS = true; /**< turn on frame rate per second test , set true for ON 
 #define REG_CONFIG _u(0xF5)
 #define REG_CTRL_MEAS _u(0xF4)
 #define REG_RESET _u(0xE0)
-#define REG_CTRL_HMIDITY _u(0xF2)
+#define REG_CTRL_HUMIDITY _u(0xF2)
 
 #define REG_TEMP_XLSB _u(0xFC)
 #define REG_TEMP_LSB _u(0xFB)
@@ -232,12 +232,13 @@ int main(void)
 
 		printf("Pressure = %.3f kPa\n", dPressure);
         printf("Temp. = %.2f C\n", temperature / 100.f);
-		printf("Humidity = %.1f %\n", humidity / 100.f);
+		printf("Humidity = %.1f %\n", humidity / 1024.f);
+		printf("RawHumidity = %ld\n", raw_humidity);
 		
 		sprintf(strPresValue, "%.1f", dPressure);
         sprintf(strTempValue, " %.1f", temperature / 100.f);
-		sprintf(strHumValue, " %.1f", humidity / 100.f);
-		sprintf(strRawHumValue, "%.4f", raw_humidity);
+		sprintf(strHumValue, " %.1f", humidity / 1024.f);
+		sprintf(strRawHumValue, "%.ld", raw_humidity);
 
 		uint16_t colorTemp;
 		if(temperature < 0)
@@ -456,9 +457,9 @@ void bme280_init()
     uint8_t buf[2];
 
 	// write the humidity oversampling to 0xF2
-	const uint8_t reg_osrs_h = (0x03); //  << 2 b001-> oversamplingx1
+	const uint8_t reg_osrs_h = (0x01); // b001-> oversamplingx1
 
-	buf[0] = REG_CTRL_HMIDITY;
+	buf[0] = REG_CTRL_HUMIDITY;
     buf[1] = reg_osrs_h;
     i2c_write_blocking(i2c_default, BME280_ADDRESS, buf, 2, false);
 
@@ -493,6 +494,11 @@ void bme280_read_raw(int32_t* temp, int32_t* pressure, int32_t* humidity)
     *pressure = (buf[0] << 12) | (buf[1] << 4) | (buf[2] >> 4);
     *temp = (buf[3] << 12) | (buf[4] << 4) | (buf[5] >> 4);
 	*humidity = (buf[6] << 8) | (buf[7]);
+
+	printf("buf[6] %d\n", buf[6]);
+	printf("buf[7] %d\n", buf[7]);
+
+
 }
 
 void bme280_reset() 
@@ -561,7 +567,7 @@ int32_t bme280_convert_humidity(int32_t raw_humidity, int32_t temp, struct bmp28
 
 	int32_t t_fine = bme280_convert(temp, params);
 
-  	var_H = (((double)t_fine) - 76800.0);
+  	/*var_H = (((double)t_fine) - 76800.0);
   	var_H = (raw_humidity - (((int32_t)params->dig_h4) * 64.0 + ((int32_t)params->dig_h5) / 16384.0 * var_H)) *
           (((int32_t)params->dig_h2) / 65536.0 * (1.0 + ((int32_t)params->dig_h6) / 67108864.0 * var_H *
                                          (1.0 + ((int32_t)params->dig_h3) / 67108864.0 * var_H)));
@@ -576,7 +582,21 @@ int32_t bme280_convert_humidity(int32_t raw_humidity, int32_t temp, struct bmp28
     	var_H = 0.0;
   	}
 
-  return var_H;
+  return var_H;*/
+
+  int32_t v_x1_u32r;
+	v_x1_u32r = (t_fine - ((int32_t)76800));
+	v_x1_u32r = (((((raw_humidity << 14) - (((int32_t)params->dig_h4) << 20) - (((int32_t)params->dig_h5) *\
+			v_x1_u32r)) + ((int32_t)16384)) >> 15) * (((((((v_x1_u32r *\
+					((int32_t)params->dig_h6)) >> 10) * (((v_x1_u32r * ((int32_t)params->dig_h3)) >> 11) +\
+							((int32_t)32768))) >> 10) + ((int32_t)2097152)) * ((int32_t)params->dig_h2) +\
+					8192) >> 14));
+	v_x1_u32r = (v_x1_u32r - (((((v_x1_u32r >> 15) * (v_x1_u32r >> 15)) >> 7) *\
+			((int32_t)params->dig_h1)) >> 4));
+	v_x1_u32r = (v_x1_u32r < 0 ? 0 : v_x1_u32r);
+
+	v_x1_u32r = (v_x1_u32r > 419430400 ? 419430400 : v_x1_u32r);
+	return (uint32_t)(v_x1_u32r>>12);
 }
 
 void bmp280_get_calib_params(struct bmp280_calib_param* params) 
