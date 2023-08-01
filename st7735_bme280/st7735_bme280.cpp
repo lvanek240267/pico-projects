@@ -161,7 +161,7 @@ void bme280_reset();
 int32_t bme280_convert(int32_t temp, struct bmp280_calib_param* params);
 int32_t bme280_convert_temp(int32_t temp, struct bmp280_calib_param* params);
 int32_t bme280_convert_pressure(int32_t pressure, int32_t temp, struct bmp280_calib_param* params);
-int32_t bme280_convert_humidity(int32_t raw_humidity, int32_t temp, struct bmp280_calib_param* params);
+double bme280_convert_humidity(int32_t raw_humidity, int32_t temp, struct bmp280_calib_param* params);
 void bmp280_get_calib_params(struct bmp280_calib_param* params);
 void bme280_get_calib_paramsHum(struct bmp280_calib_param* params);
 
@@ -225,7 +225,8 @@ int main(void)
         bme280_read_raw(&raw_temperature, &raw_pressure, &raw_humidity);
         int32_t temperature = bme280_convert_temp(raw_temperature, &params);
         int32_t pressure = bme280_convert_pressure(raw_pressure, raw_temperature, &params);
-		int32_t humidity = bme280_convert_humidity(raw_humidity, raw_temperature, &params);
+		//int32_t 
+		double humidity = bme280_convert_humidity(raw_humidity, raw_temperature, &params);
         
 		double dPressure = pressure / 100.f;
 		dPressure *= 1.03877; // This correction I have calculated from profesional meteo station near me. BME280 reading is underestimated...
@@ -556,7 +557,8 @@ int32_t bme280_convert_pressure(int32_t pressure, int32_t temp, struct bmp280_ca
     return converted;
 }
 
-int32_t bme280_convert_humidity(int32_t raw_humidity, int32_t temp, struct bmp280_calib_param* params)
+//int32_t
+double bme280_convert_humidity(int32_t raw_humidity, int32_t temp, struct bmp280_calib_param* params)
 {
 	// uses stored calibration factors to convert raw pressure into %RH
   	// Returns humidity in %rH as as double. Output value of 46.332 represents 46.332 %rH
@@ -584,7 +586,7 @@ int32_t bme280_convert_humidity(int32_t raw_humidity, int32_t temp, struct bmp28
 
   return var_H;*/
 
-  int32_t v_x1_u32r;
+  /*int32_t v_x1_u32r;
 	v_x1_u32r = (t_fine - ((int32_t)76800));
 	v_x1_u32r = (((((raw_humidity << 14) - (((int32_t)params->dig_h4) << 20) - (((int32_t)params->dig_h5) *\
 			v_x1_u32r)) + ((int32_t)16384)) >> 15) * (((((((v_x1_u32r *\
@@ -596,7 +598,15 @@ int32_t bme280_convert_humidity(int32_t raw_humidity, int32_t temp, struct bmp28
 	v_x1_u32r = (v_x1_u32r < 0 ? 0 : v_x1_u32r);
 
 	v_x1_u32r = (v_x1_u32r > 419430400 ? 419430400 : v_x1_u32r);
-	return (uint32_t)(v_x1_u32r>>12);
+	return (uint32_t)(v_x1_u32r>>12);*/
+
+	//var_H = (raw_humidity - (((double)params->dig_h4) * 64.0 + ((double)params->dig_h5) / 16384.0 * var_H)) * (((double)params->dig_h2) / 65536.0 * (1.0 + ((double)params->dig_h6) / 67108864.0 * var_H * (1.0 + ((double)params->dig_h3) / 67108864.0 * var_H)));
+	
+	
+	var_H = (((double)t_fine)-76800.0);
+	var_H = (raw_humidity-(((double)params->dig_h4)*64.0+((double)params->dig_h5) / 16384.0 * var_H))*(((double)params->dig_h2)/65536.0*(1.0 + ((double)params->dig_h6)/67108864.0*var_H*(1.0+((double)params->dig_h3)/67108864.0*var_H)));
+	var_H = var_H * (1.0-((double)params->dig_h1)*var_H/524288.0);
+	return var_H;
 }
 
 void bmp280_get_calib_params(struct bmp280_calib_param* params) 
