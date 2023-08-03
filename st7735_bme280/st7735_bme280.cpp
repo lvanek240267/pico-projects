@@ -51,8 +51,8 @@ bool bTestFPS = true; /**< turn on frame rate per second test , set true for ON 
     GND (pin 38)  -> GND on BME280 board
  */
 
-// device has default bus address of 0x76
-#define BME280_ADDRESS _u(0x77) // If you leave SDO unconnected, it will be connected to 3.3V (address 0x77)
+#define BME280_ADDRESS1 _u(0x76) 
+#define BME280_ADDRESS2 _u(0x77) 
 
 // hardware registers
 #define REG_CONFIG _u(0xF5)
@@ -155,14 +155,14 @@ void Test11(ST7735_TFT); // "clock demo" , icons, , font 7
 void TestFPS(ST7735_TFT); // FPSturn on frame rate test if true
 void EndTests(ST7735_TFT);
 
-void bme280_init();
-void bme280_read_raw(int32_t* temp, int32_t* pressure, int32_t* humidity);
-void bme280_reset();
+void bme280_init(uint16_t bme280Address);
+void bme280_read_raw(uint16_t bme280Address, int32_t* temp, int32_t* pressure, int32_t* humidity);
+void bme280_reset(uint16_t bme280Address);
 int32_t bme280_convert(int32_t temp, struct bmp280_calib_param* params);
 int32_t bme280_convert_temp(int32_t temp, struct bmp280_calib_param* params);
 int32_t bme280_convert_pressure(int32_t pressure, int32_t temp, struct bmp280_calib_param* params);
 double bme280_convert_humidity(int32_t raw_humidity, int32_t temp, struct bmp280_calib_param* params);
-void bmp280_get_calib_params(struct bmp280_calib_param* params);
+void bmp280_get_calib_params(uint16_t bme280Address, struct bmp280_calib_param* params);
 void bme280_get_calib_paramsHum(struct bmp280_calib_param* params);
 
 
@@ -196,65 +196,91 @@ int main(void)
     gpio_pull_up(PICO_I2C_SCL_PIN);
 
     // configure BME280
-	bme280_reset();
-    bme280_init();
+	bme280_reset(BME280_ADDRESS1);
+    bme280_init(BME280_ADDRESS1);
+	bme280_reset(BME280_ADDRESS2);
+    bme280_init(BME280_ADDRESS2);
 
     // retrieve fixed compensation params
     struct bmp280_calib_param params;
-    bmp280_get_calib_params(&params);
-	bme280_get_calib_paramsHum(&params);
+    bmp280_get_calib_params(BME280_ADDRESS1, &params);
+	bmp280_get_calib_params(BME280_ADDRESS2, &params);
+	//bme280_get_calib_paramsHum(&params);
 
-    int32_t raw_temperature;
-    int32_t raw_pressure;
-	int32_t raw_humidity;
+    int32_t raw_temperature1;
+    int32_t raw_pressure1;
+	int32_t raw_humidity1;
+	int32_t raw_temperature2;
+    int32_t raw_pressure2;
+	int32_t raw_humidity2;
+
 	char strTemp1[] = " Tempera-";
-	char strTemp2[] = "   ture";
-	char strPres1[] = "   Atm.";
-	char strPres2[] = " Pressure";
+	char strTemp2a[] = "  ture 1";
+	char strTemp2b[] = "  ture 2";
+
+	char strPres1[] = " Pressure";
+	//char strPres2[] = " Pressure";
 	char strHum[] = " Humidity";
+
 	char strTempUnit[] = "  dg. C";
 	char strPresUnit[] = "   hPa";
 	char strHumUnit[] = " Percent";
-	char strTempValue[10];
+
+	char strTempValue1[10];
+	char strTempValue2[10];
 	char strPresValue[10];
 	char strHumValue[10];
 	char strRawHumValue[10];
 
 	while (true) 
 	{
-        bme280_read_raw(&raw_temperature, &raw_pressure, &raw_humidity);
-        int32_t temperature = bme280_convert_temp(raw_temperature, &params);
-        int32_t pressure = bme280_convert_pressure(raw_pressure, raw_temperature, &params);
-		//int32_t 
-		double humidity = bme280_convert_humidity(raw_humidity, raw_temperature, &params);
-        
-		double dPressure = pressure / 100.f;
-		dPressure *= 1.03877; // This correction I have calculated from profesional meteo station near me. BME280 reading is underestimated...
+        bme280_read_raw(BME280_ADDRESS1, &raw_temperature1, &raw_pressure1, &raw_humidity1);
+		bme280_read_raw(BME280_ADDRESS2, &raw_temperature1, &raw_pressure2, &raw_humidity2);
 
-		printf("Pressure = %.3f kPa\n", dPressure);
-        printf("Temp. = %.2f C\n", temperature / 100.f);
-		printf("Humidity = %.1f %\n", humidity / 1024.f);
-		printf("RawHumidity = %ld\n", raw_humidity);
+        int32_t temperature1 = bme280_convert_temp(raw_temperature1, &params);
+        int32_t pressure1 = bme280_convert_pressure(raw_pressure1, raw_temperature1, &params);
+		double humidity1 = bme280_convert_humidity(raw_humidity1, raw_temperature1, &params);
+
+		int32_t temperature2 = bme280_convert_temp(raw_temperature1, &params);
+        int32_t pressure2 = bme280_convert_pressure(raw_pressure1, raw_temperature1, &params);
+		double humidity2 = bme280_convert_humidity(raw_humidity1, raw_temperature1, &params);
+		double humidity = (humidity1 + humidity2) / 2; 
+        
+		double dPressure1 = pressure1 / 100.f;
+		dPressure1 *= 1.03877; // This correction I have calculated from profesional meteo station near me. BME280 reading is underestimated...
+		double dPressure2 = pressure2 / 100.f;
+		dPressure2 *= 1.03877; // This correction I have calculated from profesional meteo station near me. BME280 reading is underestimated...
+		double dPressure = (dPressure1 + dPressure2) / 2;
+
+		printf("Pressure1 = %.3f kPa\n", dPressure1);
+        printf("Temp1. = %.2f C\n", temperature1 / 100.f);
+		printf("Humidity1 = %.1f %\n", humidity1 / 1024.f);
+		printf("RawHumidity1 = %ld\n", raw_humidity1);
+		printf("Pressure2 = %.3f kPa\n", dPressure2);
+        printf("Temp2. = %.2f C\n", temperature2 / 100.f);
+		printf("Humidity2 = %.1f %\n", humidity2 / 1024.f);
+		printf("RawHumidity2 = %ld\n", raw_humidity2);
 		
 		sprintf(strPresValue, "%.1f", dPressure);
-        sprintf(strTempValue, " %.1f", temperature / 100.f);
+        sprintf(strTempValue1, " %.1f", temperature1 / 100.f);
+		sprintf(strTempValue2, " %.1f", temperature2 / 100.f);
 		sprintf(strHumValue, " %.1f", humidity / 1024.f);
-		sprintf(strRawHumValue, "%.ld", raw_humidity);
+		sprintf(strRawHumValue, "%.ld", raw_humidity1);
 
 		uint16_t colorTemp;
-		if(temperature < 0)
+		if(temperature1 < 0)
 		{
 			colorTemp = ST7735_CYAN;
 		}
-		else if(temperature < 10)
+		else if(temperature1 < 10)
 		{
 			colorTemp = ST7735_BLUE;
 		}
-		else if(temperature < 20)
+		else if(temperature1 < 20)
 		{
 			colorTemp = ST7735_YELLOW;
 		}
-		if(temperature < 30)
+		if(temperature1 < 30)
 		{
 			colorTemp = ST7735_ORANGE;
 		}
@@ -270,24 +296,28 @@ int main(void)
 		myTFT2.TFTFontNum(myTFT2.TFTFont_Default);
 
 		myTFT1.TFTdrawText(5, 10, strTemp1, ST7735_WHITE, ST7735_BLACK, 2);
-		myTFT1.TFTdrawText(5, 25, strTemp2, ST7735_WHITE, ST7735_BLACK, 2);
+		myTFT1.TFTdrawText(5, 25, strTemp2a, ST7735_WHITE, ST7735_BLACK, 2);
+		myTFT2.TFTdrawText(5, 10, strTemp1, ST7735_WHITE, ST7735_BLACK, 2);
+		myTFT2.TFTdrawText(5, 25, strTemp2b, ST7735_WHITE, ST7735_BLACK, 2);
 		myTFT1.TFTdrawText(5, 91, strHum, ST7735_WHITE, ST7735_BLACK, 2);
-		myTFT2.TFTdrawText(5, 10, strPres1, ST7735_WHITE, ST7735_BLACK, 2);
-		myTFT2.TFTdrawText(5, 25, strPres2, ST7735_WHITE, ST7735_BLACK, 2);
+		myTFT2.TFTdrawText(5, 91, strPres1, ST7735_WHITE, ST7735_BLACK, 2);
+		//myTFT2.TFTdrawText(5, 106, strPres2, ST7735_WHITE, ST7735_BLACK, 2);
 
 		myTFT1.TFTFontNum(myTFT1.TFTFont_Wide);
 		myTFT2.TFTFontNum(myTFT2.TFTFont_Wide);
-		myTFT1.TFTdrawText(5, 50, strTempValue, colorTemp, ST7735_BLACK, 2);
+
+		myTFT1.TFTdrawText(5, 50, strTempValue1, colorTemp, ST7735_BLACK, 2);
+		myTFT2.TFTdrawText(5, 50, strTempValue2, colorTemp, ST7735_BLACK, 2);
 		myTFT1.TFTdrawText(5, 115, strHumValue, ST7735_GREEN, ST7735_BLACK, 2);
-		myTFT2.TFTdrawText(5, 115, strRawHumValue, ST7735_GREEN, ST7735_BLACK, 2);
-		myTFT2.TFTdrawText(5, 50, strPresValue, ST7735_CYAN, ST7735_BLACK, 2);
+		myTFT2.TFTdrawText(5, 115, strPresValue, ST7735_CYAN, ST7735_BLACK, 2);
 
 		myTFT1.TFTFontNum(myTFT1.TFTFont_Default);
 		myTFT2.TFTFontNum(myTFT2.TFTFont_Default);
-		
+
 		myTFT1.TFTdrawText(5, 72, strTempUnit, colorTemp, ST7735_BLACK, 2);
+		myTFT2.TFTdrawText(5, 72, strTempUnit, colorTemp, ST7735_BLACK, 2);
 		myTFT1.TFTdrawText(5, 138, strHumUnit, ST7735_GREEN, ST7735_BLACK, 2);
-		myTFT2.TFTdrawText(5, 72, strPresUnit, ST7735_CYAN, ST7735_BLACK, 2);
+		myTFT2.TFTdrawText(5, 138, strPresUnit, ST7735_CYAN, ST7735_BLACK, 2);
 
 		myTFT1.TFTdrawFastHLine(0, 88, 128, ST7735_YELLOW);
 		myTFT2.TFTdrawFastHLine(0, 88, 128, ST7735_YELLOW);
@@ -452,7 +482,7 @@ void SetupTFT2(void)
 //**********************************************************
 }
 
-void bme280_init() 
+void bme280_init(uint16_t bme280Address) 
 {
     // use the "handheld device dynamic" optimal setting (see datasheet)
     uint8_t buf[2];
@@ -462,7 +492,7 @@ void bme280_init()
 
 	buf[0] = REG_CTRL_HUMIDITY;
     buf[1] = reg_osrs_h;
-    i2c_write_blocking(i2c_default, BME280_ADDRESS, buf, 2, false);
+    i2c_write_blocking(i2c_default, bme280Address, buf, 2, false);
 
     // 500ms sampling time, x16 filter
     const uint8_t reg_config_val = ((0x04 << 5) | (0x05 << 2)); // & 0xFC;
@@ -470,17 +500,17 @@ void bme280_init()
     // send register number followed by its corresponding value
     buf[0] = REG_CONFIG;
     buf[1] = reg_config_val;
-    i2c_write_blocking(i2c_default, BME280_ADDRESS, buf, 2, false);
+    i2c_write_blocking(i2c_default, bme280Address, buf, 2, false);
 
 	// write the pressure and temp oversampling along with mode to 0xF4
     // osrs_t x1, osrs_p x4, normal mode operation
     const uint8_t reg_ctrl_meas_val = (0x01 << 5) | (0x03 << 2) | (0x03);
     buf[0] = REG_CTRL_MEAS;
     buf[1] = reg_ctrl_meas_val;
-    i2c_write_blocking(i2c_default, BME280_ADDRESS, buf, 2, false);
+    i2c_write_blocking(i2c_default, bme280Address, buf, 2, false);
 }
 
-void bme280_read_raw(int32_t* temp, int32_t* pressure, int32_t* humidity) 
+void bme280_read_raw(uint16_t bme280Address, int32_t* temp, int32_t* pressure, int32_t* humidity) 
 {
     // BMP280 data registers are auto-incrementing and we have 3 temperature and
     // pressure registers each, so we start at 0xF7 and read 8 bytes to 0xFE
@@ -488,8 +518,8 @@ void bme280_read_raw(int32_t* temp, int32_t* pressure, int32_t* humidity)
 
     uint8_t buf[8];
     uint8_t reg = REG_PRESSURE_MSB;
-    i2c_write_blocking(i2c_default, BME280_ADDRESS, &reg, 1, true);  // true to keep master control of bus
-    i2c_read_blocking(i2c_default, BME280_ADDRESS, buf, 8, false);  // false - finished with bus
+    i2c_write_blocking(i2c_default, bme280Address, &reg, 1, true);  // true to keep master control of bus
+    i2c_read_blocking(i2c_default, bme280Address, buf, 8, false);  // false - finished with bus
 
     // store the 20 bit read in a 32 bit signed integer for conversion
     *pressure = (buf[0] << 12) | (buf[1] << 4) | (buf[2] >> 4);
@@ -502,11 +532,11 @@ void bme280_read_raw(int32_t* temp, int32_t* pressure, int32_t* humidity)
 
 }
 
-void bme280_reset() 
+void bme280_reset(uint16_t bme280Address) 
 {
     // reset the device with the power-on-reset procedure
     uint8_t buf[2] = { REG_RESET, 0xB6 };
-    i2c_write_blocking(i2c_default, BME280_ADDRESS, buf, 2, false);
+    i2c_write_blocking(i2c_default, bme280Address, buf, 2, false);
 }
 
 // intermediate function that calculates the fine resolution temperature
@@ -609,25 +639,25 @@ double bme280_convert_humidity(int32_t raw_humidity, int32_t temp, struct bmp280
 	return var_H;
 }
 
-void bmp280_get_calib_params(struct bmp280_calib_param* params) 
+void bmp280_get_calib_params(uint16_t bme280Address, bmp280_calib_param* params) 
 {
     // raw temp and pressure values need to be calibrated according to
     // parameters generated during the manufacturing of the sensor
     // there are 3 temperature params, and 9 pressure params, each with a LSB
     // and MSB register, so we read from 24 registers
 
-    uint8_t buf[32] = { 0 };
+    uint8_t buf[32];
     uint8_t reg = REG_DIG_T1_LSB;
-    i2c_write_blocking(i2c_default, BME280_ADDRESS, &reg, 1, true);  // true to keep master control of bus
+    i2c_write_blocking(i2c_default, bme280Address, &reg, 1, true);  // true to keep master control of bus
     
 	// read in one go as register addresses auto-increment
-    i2c_read_blocking(i2c_default, BME280_ADDRESS, buf, NUM_CALIB_PARAMS+1, false);  // false, we're done reading
+    i2c_read_blocking(i2c_default, bme280Address, buf, NUM_CALIB_PARAMS+1, false);  // false, we're done reading
 
 	// read in one go as register addresses auto-increment
 	reg = 0xE1;
-    i2c_read_blocking(i2c_default, BME280_ADDRESS, buf+25, 7, false);  // false, we're done reading
+    i2c_read_blocking(i2c_default, bme280Address, (uint8_t *) buf+25, 7, false);  // false, we're done reading
 
-    // store these in a struct for later use
+    // Arrange the data as per the datasheet (page no. 24)
     params->dig_t1 = (uint16_t)(buf[1] << 8) | buf[0];
     params->dig_t2 = (int16_t)(buf[3] << 8) | buf[2];
     params->dig_t3 = (int16_t)(buf[5] << 8) | buf[4];
