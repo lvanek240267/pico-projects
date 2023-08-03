@@ -97,7 +97,7 @@ bool bTestFPS = true; /**< turn on frame rate per second test , set true for ON 
 // number of calibration registers to be read
 #define NUM_CALIB_PARAMS 24
 
-struct bmp280_calib_param 
+struct bmp280_calib_param
 {
     // temperature params
     uint16_t dig_t1;
@@ -202,9 +202,10 @@ int main(void)
     bme280_init(BME280_ADDRESS2);
 
     // retrieve fixed compensation params
-    struct bmp280_calib_param params;
-    bmp280_get_calib_params(BME280_ADDRESS1, &params);
-	bmp280_get_calib_params(BME280_ADDRESS2, &params);
+    struct bmp280_calib_param params1;
+	struct bmp280_calib_param params2;
+    bmp280_get_calib_params(BME280_ADDRESS1, &params1);
+	bmp280_get_calib_params(BME280_ADDRESS2, &params2);
 	//bme280_get_calib_paramsHum(&params);
 
     int32_t raw_temperature1;
@@ -235,15 +236,15 @@ int main(void)
 	while (true) 
 	{
         bme280_read_raw(BME280_ADDRESS1, &raw_temperature1, &raw_pressure1, &raw_humidity1);
-		bme280_read_raw(BME280_ADDRESS2, &raw_temperature1, &raw_pressure2, &raw_humidity2);
+		bme280_read_raw(BME280_ADDRESS2, &raw_temperature2, &raw_pressure2, &raw_humidity2);
 
-        int32_t temperature1 = bme280_convert_temp(raw_temperature1, &params);
-        int32_t pressure1 = bme280_convert_pressure(raw_pressure1, raw_temperature1, &params);
-		double humidity1 = bme280_convert_humidity(raw_humidity1, raw_temperature1, &params);
+        int32_t temperature1 = bme280_convert_temp(raw_temperature1, &params1);
+        int32_t pressure1 = bme280_convert_pressure(raw_pressure1, raw_temperature1, &params1);
+		double humidity1 = bme280_convert_humidity(raw_humidity1, raw_temperature1, &params1);
 
-		int32_t temperature2 = bme280_convert_temp(raw_temperature1, &params);
-        int32_t pressure2 = bme280_convert_pressure(raw_pressure1, raw_temperature1, &params);
-		double humidity2 = bme280_convert_humidity(raw_humidity1, raw_temperature1, &params);
+		int32_t temperature2 = bme280_convert_temp(raw_temperature2, &params2);
+        int32_t pressure2 = bme280_convert_pressure(raw_pressure2, raw_temperature2, &params2);
+		double humidity2 = bme280_convert_humidity(raw_humidity2, raw_temperature2, &params2);
 		double humidity = (humidity1 + humidity2) / 2; 
         
 		double dPressure1 = pressure1 / 100.f;
@@ -256,6 +257,7 @@ int main(void)
         printf("Temp1. = %.2f C\n", temperature1 / 100.f);
 		printf("Humidity1 = %.1f %\n", humidity1 / 1024.f);
 		printf("RawHumidity1 = %ld\n", raw_humidity1);
+
 		printf("Pressure2 = %.3f kPa\n", dPressure2);
         printf("Temp2. = %.2f C\n", temperature2 / 100.f);
 		printf("Humidity2 = %.1f %\n", humidity2 / 1024.f);
