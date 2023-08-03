@@ -219,8 +219,8 @@ int main(void)
 	char strTemp2a[] = "  ture 1";
 	char strTemp2b[] = "  ture 2";
 
-	char strPres1[] = " Pressure";
-	//char strPres2[] = " Pressure";
+	char strPres1[] = "Pressure 1";
+	char strPres2[] = "Pressure 2";
 	char strHum[] = " Humidity";
 
 	char strTempUnit[] = "  dg. C";
@@ -229,9 +229,14 @@ int main(void)
 
 	char strTempValue1[10];
 	char strTempValue2[10];
-	char strPresValue[10];
-	char strHumValue[10];
-	char strRawHumValue[10];
+
+	char strPresValue1[10];
+	char strPresValue2[10];
+	
+	char strHumValue1[10];
+	char strRawHumValue1[10];
+	char strHumValue2[10];
+	char strRawHumValue2[10];
 
 	while (true) 
 	{
@@ -248,8 +253,10 @@ int main(void)
 		double humidity = (humidity1 + humidity2) / 2; 
         
 		double dPressure1 = pressure1 / 100.f;
+		printf("Pressure1 uncorrected = %.3f kPa\n", dPressure1);
 		dPressure1 *= 1.03877; // This correction I have calculated from profesional meteo station near me. BME280 reading is underestimated...
 		double dPressure2 = pressure2 / 100.f;
+		printf("Pressure2 uncorrected = %.3f kPa\n", dPressure2);
 		dPressure2 *= 1.03877; // This correction I have calculated from profesional meteo station near me. BME280 reading is underestimated...
 		double dPressure = (dPressure1 + dPressure2) / 2;
 
@@ -263,11 +270,15 @@ int main(void)
 		printf("Humidity2 = %.1f %\n", humidity2 / 1024.f);
 		printf("RawHumidity2 = %ld\n", raw_humidity2);
 		
-		sprintf(strPresValue, "%.1f", dPressure);
-        sprintf(strTempValue1, " %.1f", temperature1 / 100.f);
+		sprintf(strTempValue1, " %.1f", temperature1 / 100.f);
 		sprintf(strTempValue2, " %.1f", temperature2 / 100.f);
-		sprintf(strHumValue, " %.1f", humidity / 1024.f);
-		sprintf(strRawHumValue, "%.ld", raw_humidity1);
+		
+		sprintf(strPresValue1, "%.1f", dPressure1);
+		sprintf(strPresValue2, "%.1f", dPressure2);
+		
+		sprintf(strHumValue1, " %.1f", humidity / 1024.f);
+		sprintf(strRawHumValue1, "%.ld", raw_humidity1);
+		sprintf(strRawHumValue2, "%.ld", raw_humidity2);
 
 		uint16_t colorTemp;
 		if(temperature1 < 0)
@@ -301,8 +312,8 @@ int main(void)
 		myTFT1.TFTdrawText(5, 25, strTemp2a, ST7735_WHITE, ST7735_BLACK, 2);
 		myTFT2.TFTdrawText(5, 10, strTemp1, ST7735_WHITE, ST7735_BLACK, 2);
 		myTFT2.TFTdrawText(5, 25, strTemp2b, ST7735_WHITE, ST7735_BLACK, 2);
-		myTFT1.TFTdrawText(5, 91, strHum, ST7735_WHITE, ST7735_BLACK, 2);
-		myTFT2.TFTdrawText(5, 91, strPres1, ST7735_WHITE, ST7735_BLACK, 2);
+		myTFT1.TFTdrawText(5, 91, strPres1, ST7735_WHITE, ST7735_BLACK, 2);
+		myTFT2.TFTdrawText(5, 91, strPres2, ST7735_WHITE, ST7735_BLACK, 2);
 		//myTFT2.TFTdrawText(5, 106, strPres2, ST7735_WHITE, ST7735_BLACK, 2);
 
 		myTFT1.TFTFontNum(myTFT1.TFTFont_Wide);
@@ -310,16 +321,16 @@ int main(void)
 
 		myTFT1.TFTdrawText(5, 50, strTempValue1, colorTemp, ST7735_BLACK, 2);
 		myTFT2.TFTdrawText(5, 50, strTempValue2, colorTemp, ST7735_BLACK, 2);
-		myTFT1.TFTdrawText(5, 115, strHumValue, ST7735_GREEN, ST7735_BLACK, 2);
-		myTFT2.TFTdrawText(5, 115, strPresValue, ST7735_CYAN, ST7735_BLACK, 2);
+		myTFT1.TFTdrawText(5, 115, strPresValue1, ST7735_CYAN, ST7735_BLACK, 2);
+		myTFT2.TFTdrawText(5, 115, strPresValue2, ST7735_CYAN, ST7735_BLACK, 2);
 
 		myTFT1.TFTFontNum(myTFT1.TFTFont_Default);
 		myTFT2.TFTFontNum(myTFT2.TFTFont_Default);
 
 		myTFT1.TFTdrawText(5, 72, strTempUnit, colorTemp, ST7735_BLACK, 2);
 		myTFT2.TFTdrawText(5, 72, strTempUnit, colorTemp, ST7735_BLACK, 2);
-		myTFT1.TFTdrawText(5, 138, strHumUnit, ST7735_GREEN, ST7735_BLACK, 2);
-		myTFT2.TFTdrawText(5, 138, strPresUnit, ST7735_CYAN, ST7735_BLACK, 2);
+		myTFT1.TFTdrawText(5, 138, strPresUnit, ST7735_GREEN, ST7735_BLACK, 2);
+		myTFT2.TFTdrawText(5, 138, strPresUnit, ST7735_GREEN, ST7735_BLACK, 2);
 
 		myTFT1.TFTdrawFastHLine(0, 88, 128, ST7735_YELLOW);
 		myTFT2.TFTdrawFastHLine(0, 88, 128, ST7735_YELLOW);
