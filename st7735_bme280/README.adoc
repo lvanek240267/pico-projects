@@ -3,7 +3,7 @@
 == Description
 [[description]]
 
-Testing ST7735_TFT with BME280 temperature, pressure and humidity sensor. Reading humidity is't finished yet.
+Testing ST7735_TFT with BME280 temperature, pressure and humidity sensors. Reading humidity is't finished yet.
 
 Original ST7735 repository: https://github.com/gavinlyonsrepo/ST7735_TFT_PICO
 
@@ -34,5 +34,5 @@ image::wiring.png[]
 == Practical realization
 [[ssd1306_i2c_image]]
 [pdfwidth=75%]
-.Realization on breadboard.
+.Realization on breadboard. There are two BME280 sensors. First one has interrupted pull-ups on I2C, second has changed address to 0x76H. 
 image::screens.jpg[]
