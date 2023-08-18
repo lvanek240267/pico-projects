@@ -34,5 +34,5 @@ target_include_directories(pico_st7735 INTERFACE ${CMAKE_CURRENT_LIST_DIR}/inclu
 target_link_libraries(${PROJECT_NAME} pico_stdlib hardware_spi hardware_i2c pico_st7735_4)
 
 # Enable usb output, disable uart output
-pico_enable_stdio_usb(${PROJECT_NAME} 0)
-pico_enable_stdio_uart(${PROJECT_NAME} 1)
+pico_enable_stdio_usb(${PROJECT_NAME} 1)
+pico_enable_stdio_uart(${PROJECT_NAME} 0)
