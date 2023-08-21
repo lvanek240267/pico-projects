@@ -38,3 +38,6 @@ add_compile_options(-Wall
 
 # Hardware-specific examples in subdirectories:
 
+# Enable usb output, disable uart output
+pico_enable_stdio_usb(my_blink 1)
+pico_enable_stdio_uart(my_blink 0)
