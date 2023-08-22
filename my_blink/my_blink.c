@@ -37,7 +37,7 @@ int main()
         gpio_put(LED_PIN, 1);
         gpio_put(LED_PIN15, 0);
         gpio_put(LED_PIN16, 1);
-        sleep_ms(50);
+        sleep_ms(250);
 
         a++;
         b--;
@@ -46,7 +46,7 @@ int main()
         gpio_put(LED_PIN, 0);
         gpio_put(LED_PIN15, 1);
         gpio_put(LED_PIN16, 0);
-        sleep_ms(50);
+        sleep_ms(250);
     }
 #endif
 }

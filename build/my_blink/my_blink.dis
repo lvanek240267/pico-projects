@@ -368,7 +368,7 @@ Disassembly of section .text:
 10000356:	2780      	movs	r7, #128	; 0x80
 10000358:	027f      	lsls	r7, r7, #9
 1000035a:	6167      	str	r7, [r4, #20]
-1000035c:	2032      	movs	r0, #50	; 0x32
+1000035c:	20fa      	movs	r0, #250	; 0xfa
 1000035e:	f001 f823 	bl	100013a8 <sleep_ms>
 10000362:	3501      	adds	r5, #1
 10000364:	3e01      	subs	r6, #1
@@ -381,7 +381,7 @@ Disassembly of section .text:
 10000374:	4643      	mov	r3, r8
 10000376:	6163      	str	r3, [r4, #20]
 10000378:	61a7      	str	r7, [r4, #24]
-1000037a:	2032      	movs	r0, #50	; 0x32
+1000037a:	20fa      	movs	r0, #250	; 0xfa
 1000037c:	f001 f814 	bl	100013a8 <sleep_ms>
 10000380:	e7df      	b.n	10000342 <main+0x3e>
 10000382:	46c0      	nop			; (mov r8, r8)
