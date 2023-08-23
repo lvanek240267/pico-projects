@@ -17,6 +17,8 @@ int main()
     const uint LED_PIN15 = 15;
     const uint LED_PIN16 = 16;
 
+    stdio_init_all();
+
     gpio_init(LED_PIN);
     gpio_set_dir(LED_PIN, GPIO_OUT);
 
@@ -26,7 +28,7 @@ int main()
     gpio_init(LED_PIN16);
     gpio_set_dir(LED_PIN16, GPIO_OUT);
     
-    setup_default_uart();
+    //setup_default_uart();
     printf("Hello, world!\n");
 
     int a = 0;
