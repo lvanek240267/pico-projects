@@ -8,7 +8,7 @@ Some personal projects for playing with Raspberry Pi Pico. Nothing interesting h
 
 App|Description
 ---|---
-[my_blink](my_blink) | Blink an LED on and off.
+[my_blink](my_blink) | Blink an LED on and off. Uses SSD1306 I2C OLED for display loop counting.
 
 
 ### NeoPixels sample
