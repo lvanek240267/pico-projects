@@ -196,6 +196,7 @@ int main()
 
     int a = 0;
     int b = 100000;
+    int c = 0;
 
     while (true) 
     {
@@ -219,13 +220,22 @@ int main()
         sprintf(buffer, "b = %d", b);
         WriteString(buf, 5, 24, buffer);
 
-        render(buf, &frame_area);
+        sprintf(buffer, "c = %d", c);
+        WriteString(buf, 5, 40, buffer);
 
+        render(buf, &frame_area);
 
         gpio_put(LED_PIN, 0);
         gpio_put(LED_PIN15, 1);
         gpio_put(LED_PIN16, 0);
         sleep_ms(250);
+
+        if (a > 100000)
+        {
+            a = 0;
+            b = 100000;
+            c++;
+        }
     }
 }
 
