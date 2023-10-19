@@ -13,7 +13,7 @@ set(CMAKE_CXX_STANDARD 17)
 pico_sdk_init()
 
 # Tell CMake where to find the executable source file
-add_executable(${PROJECT_NAME} st7735_bme280.cpp)
+add_executable(${PROJECT_NAME} st7735_bme280.cpp bme280.cpp)
 
 # Create map/bin/hex/uf2 files
 pico_add_extra_outputs(${PROJECT_NAME})

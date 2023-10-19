@@ -3,14 +3,14 @@
 == Description
 [[description]]
 
-Testing ST7735_TFT with BME280 temperature, pressure and humidity sensors. Reading humidity is't finished yet.
+Testing ST7735_TFT with two BME280 temperature, pressure and humidity sensors.
 
 Original ST7735 repository: https://github.com/gavinlyonsrepo/ST7735_TFT_PICO
 
 == Wiring information
 [[ssd1306_i2c_wiring]]
 [pdfwidth=75%]
-.Wiring Diagram for Raspberry Pi Pico, ST7735 TFT displays and BME280 sensor. Only 1st display is painted. I have moved BMP280 pins to GP12 and GP13, so GP0 ang GP1 is now used for debugging:
+.Wiring Diagram for Raspberry Pi Pico, ST7735 TFT displays and BME280 sensors. Only 1st display is painted. I have moved BMP280 pins to GP12 and GP13, so GP0 ang GP1 is now used for debugging:
 image::wiring.png[]
 
 * First display:
@@ -34,5 +34,5 @@ image::wiring.png[]
 == Practical realization
 [[ssd1306_i2c_image]]
 [pdfwidth=75%]
-.Realization on breadboard. There are two BME280 sensors. First one has interrupted pull-ups on I2C, second has changed address to 0x76H. 
+.Realization on breadboard. There are two BME280 sensors. First one has interrupted pull-ups on I2C, second has changed address to 0x76H.
 image::screens.jpg[]
