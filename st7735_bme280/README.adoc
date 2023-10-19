@@ -38,7 +38,6 @@ image::wiring.png[]
 Left Raspberry PI Pico is for debugging, right one rinnung program.
 image::screens.jpg[]
 
-[[ssd1306_i2c_image2]]
 [pdfwidth=75%]
 .Final version with all values.
 image::screens2.jpg[]
