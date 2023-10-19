@@ -35,4 +35,10 @@ image::wiring.png[]
 [[ssd1306_i2c_image]]
 [pdfwidth=75%]
 .Realization on breadboard. There are two BME280 sensors. First one has interrupted pull-ups on I2C, second has changed address to 0x76H.
+Left Raspberry PI Pico is for debugging, right one rinnung program.
 image::screens.jpg[]
+
+[[ssd1306_i2c_image2]]
+[pdfwidth=75%]
+.Final version with all values.
+image::screens2.jpg[]
