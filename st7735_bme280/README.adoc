@@ -3,7 +3,7 @@
 == Description
 [[description]]
 
-Testing ST7735_TFT with two BME280 temperature, pressure and humidity sensors.
+Testing ST7735_TFT with two BME280 temperature, pressure and humidity sensors. Displays used: 1.8" 128x160 TFT, ST7735, SPI.
 
 Original ST7735 repository: https://github.com/gavinlyonsrepo/ST7735_TFT_PICO
 

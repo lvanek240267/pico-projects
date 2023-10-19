@@ -135,7 +135,8 @@ float BME280::readPressure()
  *  @brief  Returns the humidity from the sensor
  *  @returns the humidity value read from the device
  */
-float BME280::readHumidity() {
+float BME280::readHumidity() 
+{
     int32_t var1, var2, var3, var4, var5;
 
     readTemperature(); // must be done first to get t_fine

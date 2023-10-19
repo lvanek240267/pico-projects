@@ -1,7 +1,7 @@
 /*!
 	@file st7735_bme280.cpp
 	@author Gavin Lyons (TFT Display Driver), Darren Horrocks (BME 280 Driver), Lumir Vanek (Integration)
-	@brief Two ST7735_TFT displays + BME280 sensor.
+	@brief Two ST7735_TFT displays + BME280 sensor. Displays used: 1.8" 128x160 TFT, ST7735, SPI
 */
 
 // Section ::  libraries 
@@ -15,7 +15,6 @@
 #include "pico/stdlib.h"
 
 #include "bme280.h"
-
 
 // Section :: Defines   
 //  Test timing related defines 
