@@ -57,6 +57,8 @@ bool bTestFPS = true; /**< turn on frame rate per second test , set true for ON 
 #define PICO_I2C_SDA_PIN 12
 #define PICO_I2C_SCL_PIN 13
 
+#define ALTITUDE 350 // Change this constant by your own
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //  Section ::  Function Headers 
@@ -121,7 +123,7 @@ int main(void)
 			float temperature = sensor0.readTemperature();
 			float humidity = sensor0.readHumidity();
 			float pressure = sensor0.readPressure() / 100.0f;
-			float altitude = sensor0.readAltitude();
+			float altitude = ALTITUDE; // sensor0.readAltitude();
 			float seaLevelPressure = sensor0.seaLevelForAltitude(altitude, pressure);
 
 			printf("Temperature1 = %.2f C\n", temperature);
@@ -179,7 +181,7 @@ int main(void)
 			float temperature = sensor1.readTemperature();
 			float humidity = sensor1.readHumidity();
 			float pressure = sensor1.readPressure() / 100.0f;
-			float altitude = sensor1.readAltitude();
+			float altitude = ALTITUDE; // sensor1.readAltitude();
 			float seaLevelPressure = sensor1.seaLevelForAltitude(altitude, pressure);
 
 			printf("Temperature2 = %.2f C\n", temperature);
