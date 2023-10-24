@@ -88,7 +88,7 @@ int main(void)
     bi_decl(bi_2pins_with_func(PICO_I2C_SDA_PIN, PICO_I2C_SCL_PIN, GPIO_FUNC_I2C));
     bi_decl(bi_program_description("BMP280 I2C"));
 
-    printf("Hello, BMP280! Reading temperaure and pressure values from sensor...\n");
+    printf("Hello, BME280! Reading temperaure, humidity and pressure values from sensor...\n");
 
     // I2C is "open drain", pull ups to keep signal high when no data is being sent
     i2c_init(i2c_default, 100 * 1000);
