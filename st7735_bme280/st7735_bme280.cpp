@@ -88,8 +88,9 @@ int main(void)
     bi_decl(bi_2pins_with_func(PICO_I2C_SDA_PIN, PICO_I2C_SCL_PIN, GPIO_FUNC_I2C));
     bi_decl(bi_program_description("BMP280 I2C"));
 
-    printf("Hello, BME280! Reading temperaure, humidity and pressure values from sensor...\n");
-
+    printf("Hello1, BME280! Reading temperaure, humidity and pressure values from sensor...\n");
+	printf("Hello2, BME280! Reading temperaure, humidity and pressure values from sensor...\n");
+	
     // I2C is "open drain", pull ups to keep signal high when no data is being sent
     i2c_init(i2c_default, 100 * 1000);
     gpio_set_function(PICO_I2C_SDA_PIN, GPIO_FUNC_I2C);
@@ -97,13 +98,7 @@ int main(void)
     gpio_pull_up(PICO_I2C_SDA_PIN);
     gpio_pull_up(PICO_I2C_SCL_PIN);
 
-    // configure BME280
-	BME280 sensor0 = BME280(0, BME280_ADDRESS1);
-    bool connected0 = sensor0.begin();
-	BME280 sensor1 = BME280(0, BME280_ADDRESS2);
-    bool connected1 = sensor1.begin();
-
-	char strTemp[] = "Temp. dgC";
+    char strTemp[] = "Temp. dgC";
 	char strHum[] = "Humid. Pct";
 	char strPres[] = "Press. hPa";
 	
@@ -118,7 +113,11 @@ int main(void)
 	
 	while (true) 
 	{
-		if (connected0) 
+		BME280 sensor0 = BME280(0, BME280_ADDRESS1);
+    	//bool connected0 = sensor0.begin(); // Don't call it with default params ...
+		bool connected0 = sensor0.begin(BME280_ADDRESS1, BME280_CHIPID); // ... but force it
+	
+		if (connected0)
 		{
 			float temperature = sensor0.readTemperature();
 			float humidity = sensor0.readHumidity();
@@ -175,6 +174,10 @@ int main(void)
 			myTFT1.TFTdrawFastHLine(0, 55, 128, ST7735_YELLOW);
 			myTFT1.TFTdrawFastHLine(0, 112, 128, ST7735_YELLOW);
 		}
+
+		BME280 sensor1 = BME280(1, BME280_ADDRESS2);
+	    // bool connected1 = sensor1.begin(); // Don't call it with default params ...
+		bool connected1 = sensor1.begin(BME280_ADDRESS2, BME280_CHIPID); // ... but force it
 
 		if (connected1) 
 		{
