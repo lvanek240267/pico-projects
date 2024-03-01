@@ -14,7 +14,7 @@ https://www.digikey.de/de/maker/projects/raspberry-pi-pico-and-rp2040-cc-part-2-
 == Wiring information
 [[wiring]]
 [pdfwidth=75%]
-.Wiring Diagram for Raspberry Pi Pico and SSD1306. Display uses I2C #1, it allows debugging with Picoprobe. So:
+.Wiring Diagram for two Raspberry Pi Picos and SSD1306. Display uses I2C #1, it allows debugging with Picoprobe. So:
 image::wiring.png[]
 
 == Practical realization
@@ -26,11 +26,12 @@ image::screens.jpg[]
 == Build
 [[build_image]]
 [pdfwidth=75%]
-.Realization on breadboard.
+.Building project.
 image::build.png[]
 
 == Debugging
 [[debug_image]]
 [pdfwidth=75%]
-.Realization on breadboard.
+.Debugging source code.
 image::debugging.png[]
+
