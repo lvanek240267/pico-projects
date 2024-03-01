@@ -78,7 +78,6 @@
 #define SSD1306_WRITE_MODE         _u(0xFE)
 #define SSD1306_READ_MODE          _u(0xFF)
 
-
 // --------------------------------------------
 // Used I2C #1, allows debugging with Picoprobe
 #define PICO_SECOND_I2C 1
