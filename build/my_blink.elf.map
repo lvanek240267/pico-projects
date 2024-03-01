@@ -1388,9 +1388,9 @@ Discarded input sections
                 0x00000000       0x3e my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
  .text.i2c_read_timeout_per_char_us
                 0x00000000       0x3e my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
- .text          0x00000000        0x0 C:\Users\lvanek\AppData\Local\Temp\cc08D2Yg.o
- .data          0x00000000        0x0 C:\Users\lvanek\AppData\Local\Temp\cc08D2Yg.o
- .bss           0x00000000        0x0 C:\Users\lvanek\AppData\Local\Temp\cc08D2Yg.o
+ .text          0x00000000        0x0 C:\Users\lvanek\AppData\Local\Temp\ccGeFutu.o
+ .data          0x00000000        0x0 C:\Users\lvanek\AppData\Local\Temp\ccGeFutu.o
+ .bss           0x00000000        0x0 C:\Users\lvanek\AppData\Local\Temp\ccGeFutu.o
  .data          0x00000000        0x0 c:/picosdk/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp\libgcc.a(_dvmd_tls.o)
  .bss           0x00000000        0x0 c:/picosdk/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp\libgcc.a(_dvmd_tls.o)
  .text          0x00000000        0x0 c:/picosdk/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libg.a(lib_a-calloc.o)
@@ -1549,7 +1549,7 @@ LOAD c:/picosdk/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../.
 .boot2          0x10000000      0x100
                 0x10000000                __boot2_start__ = .
  *(.boot2)
- .boot2         0x10000000      0x100 C:\Users\lvanek\AppData\Local\Temp\cc08D2Yg.o
+ .boot2         0x10000000      0x100 C:\Users\lvanek\AppData\Local\Temp\ccGeFutu.o
                 0x10000100                __boot2_end__ = .
                 0x00000001                ASSERT (((__boot2_end__ - __boot2_start__) == 0x100), ERROR: Pico second stage bootloader must be 256 bytes in size)
 
@@ -2426,9 +2426,9 @@ LOAD c:/picosdk/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../.
                 0x10007d84       0x37 my_blink/CMakeFiles/my_blink.dir/my_blink.c.obj
  *fill*         0x10007dbb        0x1 
  .rodata        0x10007dbc       0x44 my_blink/CMakeFiles/my_blink.dir/my_blink.c.obj
- .rodata.__bi_143.0
+ .rodata.__bi_142.0
                 0x10007e00        0x8 my_blink/CMakeFiles/my_blink.dir/my_blink.c.obj
- .rodata.__bi_144.1
+ .rodata.__bi_143.1
                 0x10007e08        0xc my_blink/CMakeFiles/my_blink.dir/my_blink.c.obj
  .rodata.font   0x10007e14      0x128 my_blink/CMakeFiles/my_blink.dir/my_blink.c.obj
  .rodata.spin_lock_claim_unused.str1.4
@@ -2738,9 +2738,9 @@ LOAD c:/picosdk/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../.
 
 .binary_info    0x100095c4       0x2c
  *(.binary_info.keep.*)
- .binary_info.keep.__bi_ptr143
+ .binary_info.keep.__bi_ptr142
                 0x100095c4        0x4 my_blink/CMakeFiles/my_blink.dir/my_blink.c.obj
- .binary_info.keep.__bi_ptr144
+ .binary_info.keep.__bi_ptr143
                 0x100095c8        0x4 my_blink/CMakeFiles/my_blink.dir/my_blink.c.obj
  .binary_info.keep.__bi_ptr22
                 0x100095cc        0x4 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
@@ -3175,7 +3175,7 @@ LOAD my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/lib/tinyusb/src/tusb.c
 LOAD my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
 LOAD my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
 LOAD my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
-LOAD C:\Users\lvanek\AppData\Local\Temp\cc08D2Yg.o
+LOAD C:\Users\lvanek\AppData\Local\Temp\ccGeFutu.o
 LOAD c:/picosdk/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libstdc++.a
 LOAD c:/picosdk/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libm.a
 START GROUP
@@ -3294,7 +3294,7 @@ LOAD linker stubs
  .ARM.attributes
                 0x000007ce       0x2c my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
  .ARM.attributes
-                0x000007fa       0x22 C:\Users\lvanek\AppData\Local\Temp\cc08D2Yg.o
+                0x000007fa       0x22 C:\Users\lvanek\AppData\Local\Temp\ccGeFutu.o
  .ARM.attributes
                 0x0000081c       0x1e c:/picosdk/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp\libgcc.a(_dvmd_tls.o)
  .ARM.attributes
@@ -3632,53 +3632,53 @@ LOAD linker stubs
  .debug_ranges  0x00004710      0x370 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
  .debug_ranges  0x00004a80      0x198 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
 
-.debug_line     0x00000000    0x169c7
- .debug_line    0x00000000      0x992 my_blink/CMakeFiles/my_blink.dir/my_blink.c.obj
- .debug_line    0x00000992      0xc41 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
- .debug_line    0x000015d3      0x249 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
- .debug_line    0x0000181c      0x433 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
- .debug_line    0x00001c4f      0x42f my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
- .debug_line    0x0000207e      0xff0 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
- .debug_line    0x0000306e      0x1ea my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/common/pico_sync/lock_core.c.obj
- .debug_line    0x00003258     0x105a my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/common/pico_sync/mutex.c.obj
- .debug_line    0x000042b2      0x275 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/common/pico_sync/critical_section.c.obj
- .debug_line    0x00004527     0x1b36 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/common/pico_time/time.c.obj
- .debug_line    0x0000605d      0xba8 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
- .debug_line    0x00006c05      0x87e my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/common/pico_util/pheap.c.obj
- .debug_line    0x00007483      0x937 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
- .debug_line    0x00007dba      0x4f6 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
- .debug_line    0x000082b0      0x3da my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
- .debug_line    0x0000868a      0x27e my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
- .debug_line    0x00008908      0xa2a my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
- .debug_line    0x00009332     0x1201 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
- .debug_line    0x0000a533      0x140 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
- .debug_line    0x0000a673      0x20d my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
- .debug_line    0x0000a880      0x2c9 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
- .debug_line    0x0000ab49      0x41e my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
- .debug_line    0x0000af67      0x30c my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
- .debug_line    0x0000b273      0x696 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
- .debug_line    0x0000b909       0x90 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
- .debug_line    0x0000b999      0x3d4 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
- .debug_line    0x0000bd6d      0x2fe my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
- .debug_line    0x0000c06b      0x1c0 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
- .debug_line    0x0000c22b      0x216 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
- .debug_line    0x0000c441       0xba my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
- .debug_line    0x0000c4fb       0xc8 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
- .debug_line    0x0000c5c3      0x190 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
- .debug_line    0x0000c753      0xded my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
- .debug_line    0x0000d540      0x407 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
- .debug_line    0x0000d947      0xcf0 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
- .debug_line    0x0000e637      0x2a7 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
- .debug_line    0x0000e8de      0x354 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
- .debug_line    0x0000ec32      0x784 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
- .debug_line    0x0000f3b6      0xe12 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
- .debug_line    0x000101c8      0x9c6 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
- .debug_line    0x00010b8e     0x1f9a my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
- .debug_line    0x00012b28      0x461 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
- .debug_line    0x00012f89      0xdbc my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
- .debug_line    0x00013d45      0xb71 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/lib/tinyusb/src/tusb.c.obj
- .debug_line    0x000148b6     0x14fd my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
- .debug_line    0x00015db3      0xc14 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
+.debug_line     0x00000000    0x169c8
+ .debug_line    0x00000000      0x993 my_blink/CMakeFiles/my_blink.dir/my_blink.c.obj
+ .debug_line    0x00000993      0xc41 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+ .debug_line    0x000015d4      0x249 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
+ .debug_line    0x0000181d      0x433 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+ .debug_line    0x00001c50      0x42f my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+ .debug_line    0x0000207f      0xff0 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+ .debug_line    0x0000306f      0x1ea my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/common/pico_sync/lock_core.c.obj
+ .debug_line    0x00003259     0x105a my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/common/pico_sync/mutex.c.obj
+ .debug_line    0x000042b3      0x275 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/common/pico_sync/critical_section.c.obj
+ .debug_line    0x00004528     0x1b36 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/common/pico_time/time.c.obj
+ .debug_line    0x0000605e      0xba8 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+ .debug_line    0x00006c06      0x87e my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/common/pico_util/pheap.c.obj
+ .debug_line    0x00007484      0x937 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+ .debug_line    0x00007dbb      0x4f6 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
+ .debug_line    0x000082b1      0x3da my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+ .debug_line    0x0000868b      0x27e my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
+ .debug_line    0x00008909      0xa2a my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+ .debug_line    0x00009333     0x1201 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+ .debug_line    0x0000a534      0x140 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+ .debug_line    0x0000a674      0x20d my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+ .debug_line    0x0000a881      0x2c9 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+ .debug_line    0x0000ab4a      0x41e my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+ .debug_line    0x0000af68      0x30c my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+ .debug_line    0x0000b274      0x696 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+ .debug_line    0x0000b90a       0x90 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
+ .debug_line    0x0000b99a      0x3d4 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
+ .debug_line    0x0000bd6e      0x2fe my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
+ .debug_line    0x0000c06c      0x1c0 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
+ .debug_line    0x0000c22c      0x216 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
+ .debug_line    0x0000c442       0xba my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+ .debug_line    0x0000c4fc       0xc8 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
+ .debug_line    0x0000c5c4      0x190 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+ .debug_line    0x0000c754      0xded my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+ .debug_line    0x0000d541      0x407 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+ .debug_line    0x0000d948      0xcf0 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+ .debug_line    0x0000e638      0x2a7 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+ .debug_line    0x0000e8df      0x354 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
+ .debug_line    0x0000ec33      0x784 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
+ .debug_line    0x0000f3b7      0xe12 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+ .debug_line    0x000101c9      0x9c6 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+ .debug_line    0x00010b8f     0x1f9a my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+ .debug_line    0x00012b29      0x461 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+ .debug_line    0x00012f8a      0xdbc my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+ .debug_line    0x00013d46      0xb71 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/lib/tinyusb/src/tusb.c.obj
+ .debug_line    0x000148b7     0x14fd my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+ .debug_line    0x00015db4      0xc14 my_blink/CMakeFiles/my_blink.dir/C_/PicoSDK/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
 
 .debug_str      0x00000000     0x7320
  .debug_str     0x00000000      0x8db my_blink/CMakeFiles/my_blink.dir/my_blink.c.obj

@@ -6,7 +6,7 @@
 The aim of this project is to verify program debugging using PicoProbe. 
 There is onboard LED and SSD1306 I2C display.
 
-Setup is base on DigiKey articles:
+Setup is based on DigiKey articles:
 https://www.digikey.de/en/maker/projects/raspberry-pi-pico-and-rp2040-cc-part-1-blink-and-vs-code/7102fb8bca95452e9df6150f39ae8422
 
 https://www.digikey.de/de/maker/projects/raspberry-pi-pico-and-rp2040-cc-part-2-debugging-with-vs-code/470abc7efb07432b82c95f6f67f184c0
