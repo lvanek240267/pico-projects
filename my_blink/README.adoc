@@ -1,4 +1,4 @@
-= Mu blink
+= My blink
 
 == Description
 [[description]]
