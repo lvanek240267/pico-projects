@@ -7,7 +7,7 @@ cmake-*
 *.bin
 *.dis
 *.hex
-*.elf
+build/*/*.elf
 CMakeCache.txt
 .ninja*.*
 build/.cmake
