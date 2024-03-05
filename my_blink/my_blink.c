@@ -168,10 +168,10 @@ int main()
 
     const char *text[] = {
         "Raspberry PI",
+        "               ",
         "PICO OLED   ",
         "               ",
-        "               ",
-        "               ",
+        "Sample         ",
         "               ",
         "               ",
         "               "
