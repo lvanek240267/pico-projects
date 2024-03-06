@@ -15,4 +15,4 @@ example_auto_set_url(my_blink)
 
 # Enable usb output, disable uart output
 pico_enable_stdio_usb(my_blink 1)
-pico_enable_stdio_uart(my_blink 1)
+pico_enable_stdio_uart(my_blink 0)

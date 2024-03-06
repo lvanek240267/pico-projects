@@ -189,7 +189,6 @@ int main()
 
 #endif
 
-
     //setup_default_uart();
     printf("Hello, world!\n");
 
